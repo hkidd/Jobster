@@ -1,4 +1,4 @@
-// 
+// Front end js file for grabbing the user input and sending it to the back end
 const loginFormHandler = async (event) => {
     event.preventDefault();
   

@@ -78,7 +78,7 @@ router.put('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
-    // if the application is successfully updated, the new response will be returned as json
+    // if the application is successfully updated, the response will be returned as json
     res.status(200).json(applicationData);
   } catch (err) {
       res.status(500).json(err);
