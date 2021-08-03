@@ -13,5 +13,3 @@ const seedAll = async () => {
 };
 
 seedAll();
-
-// 
