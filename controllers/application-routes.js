@@ -12,18 +12,18 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     const dbApplicationData = await Application.findAll(
-    //   {
-    //   include: [
-    //     {
-    //       model: Interview,
-    //       attributes: [],
-    //     },
-    //     {
-    //       model: Test,
-    //       attributes: [],
-    //     }
-    //   ],
-    // }
+      {
+      include: [
+        {
+          model: Interview,
+          attributes: ["id", "interview_number", "interview_date", "thank_you_note_sent", "follow_up_email", "application_id"],
+        },
+        {
+          model: Test,
+          attributes: ["id", "test_date", "concepts", "passed", "application_id"],
+        }
+      ],
+    }
     );
 
   //   res.status(200).json(dbApplicationData);
