@@ -19,4 +19,12 @@ Interview.belongsTo(Application, {
     foreignKey: 'application_id',
 });
 
+Application.hasMany(Test, {
+    foreignKey: 'application_id',
+});
+
+Test.belongsTo(Application, {
+    foreignKey: 'application_id',
+});
+
 module.exports = {User, Application, Interview, Test};
