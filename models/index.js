@@ -22,7 +22,7 @@ Interview.belongsTo(Application, {
     foreignKey: 'application_id',
 });
 
-Application.hasMany(Test, {
+Application.hasOne(Test, {
     foreignKey: 'application_id',
 });
 
