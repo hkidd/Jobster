@@ -1,7 +1,5 @@
 {{!-- For each application, grab the appropriate info and insert into a card, list, accordion, etc to display on the page  --}}
 
-{{!-- Not sure if these should be app.id, app.company_name, etc --}}
-
 <div class="card">
 <a href="/application/{{id}}"></a>
   <h5 class="card-header">{{company_name}}</h5>
@@ -12,7 +10,7 @@
     <a href="#" class="btn btn-primary">Delete</a>
   </div>
   <div class="card-footer text-muted">
-    {{!-- Days since applying  --}}
+    {{submission_date}}
   </div>
 </a>
 </div>
