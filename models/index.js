@@ -1,3 +1,6 @@
+// Outlines all of the table relationships
+
+
 const User = require('./User');
 const Application = require('./Application');
 const Interview = require('./Interview');
@@ -19,7 +22,7 @@ Interview.belongsTo(Application, {
     foreignKey: 'application_id',
 });
 
-Application.hasMany(Test, {
+Application.hasOne(Test, {
     foreignKey: 'application_id',
 });
 

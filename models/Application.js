@@ -1,3 +1,6 @@
+// This application model sets up the application table for the database
+
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 

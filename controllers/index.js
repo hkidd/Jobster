@@ -1,3 +1,6 @@
+// Based on the url, using a / will take the user to the application routes
+// Otherwise, /api will take the user to the api routes folder
+
 const router = require('express').Router();
 
 const apiRoutes = require('./api');

@@ -1,4 +1,7 @@
-// 
+// Front end js file for grabbing the user input and sending it to the back end
+// If they are able to login successfully, they will be redirected to the homepage
+// If not, error is displayed and can try to log in again
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
   
@@ -20,34 +23,7 @@ const loginFormHandler = async (event) => {
     }
   };
   
-  const signupFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const firstname = document.querySelector('#firstname-signup').value.trim();
-    const lastname = document.querySelector('#lastname-signup').value.trim();
-    const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-  
-    if (firstname && lastname && username && email && password) {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ firstname, lastname, username, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed to sign up.');
-      }
-    }
-  };
-  
+  // Event listeners for the different pages
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
-  
-  document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);

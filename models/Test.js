@@ -1,3 +1,6 @@
+// This test model sets up the test table for the database
+
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 

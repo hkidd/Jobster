@@ -1,3 +1,7 @@
+// This user model sets up the user table for the database
+// Also bcrypts the password
+
+
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
@@ -7,6 +11,12 @@ class User extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
+
+// if(loginPw == this.password) {
+//   return true;
+// } else {
+//   return false;
+// }
 
 User.init(
   {

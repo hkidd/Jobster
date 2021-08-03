@@ -1,3 +1,6 @@
+// Urls with /api will take the user here
+// Might want to move the application routes here
+
 const router = require('express').Router();
 
 const userRoutes = require('./user-routes');

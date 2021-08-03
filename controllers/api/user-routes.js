@@ -1,11 +1,17 @@
+// These routes allow creation of new users
+// Allow users to login and logout
+
+
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// CREATE new user
-router.post('/', async (req, res) => {
+// CREATE new user (Sign Up)
+router.post('/signup', async (req, res) => {
+  console.log(req.body);
   try {
     const dbUserData = await User.create({
-      username: req.body.username,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
       email: req.body.email,
       password: req.body.password,
     });
@@ -23,12 +29,16 @@ router.post('/', async (req, res) => {
 
 // Login
 router.post('/login', async (req, res) => {
+  console.log(req.body);
+  console.log(req.body.email);
+  console.log(req.body.password);
   try {
     const dbUserData = await User.findOne({
       where: {
         email: req.body.email,
       },
     });
+    console.log(dbUserData);
 
     if (!dbUserData) {
       res
@@ -38,7 +48,7 @@ router.post('/login', async (req, res) => {
     }
 
     const validPassword = await dbUserData.checkPassword(req.body.password);
-
+    console.log(validPassword);
     if (!validPassword) {
       res
         .status(400)
