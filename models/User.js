@@ -12,6 +12,12 @@ class User extends Model {
   }
 }
 
+// if(loginPw == this.password) {
+//   return true;
+// } else {
+//   return false;
+// }
+
 User.init(
   {
     id: {

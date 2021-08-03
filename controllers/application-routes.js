@@ -118,4 +118,15 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Signup route
+router.get('/signup', (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  // Otherwise, render the 'signup' template
+  res.render('signup');
+});
+
 module.exports = router;
