@@ -1,4 +1,7 @@
-// 
+// Front end js file for grabbing the user input and sending it to the back end
+// If they are able to login successfully, they will be redirected to the homepage
+// If not, error is displayed and can try to log in again
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
   
@@ -20,6 +23,12 @@ const loginFormHandler = async (event) => {
     }
   };
   
+
+  // Here, this file is grabbing the user input from the sign up sheet
+  // This should then be sent to the back end at /api/users to POST a new user
+  // If successful, they are also routed to the homepage
+  // If not, error is displayed and can try to sign up again
+
   const signupFormHandler = async (event) => {
     event.preventDefault();
   
@@ -44,6 +53,7 @@ const loginFormHandler = async (event) => {
     }
   };
   
+  // Event listeners for the different pages
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);

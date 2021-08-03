@@ -1,3 +1,6 @@
+// This interview model sets up the interview table for the database
+
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
