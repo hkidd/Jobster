@@ -7,36 +7,43 @@ const withAuth = require('../utils/auth');
 // These will be presented on the home page after user login using handlebars
 
 // GET all applications for homepage
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const dbApplicationData = await Application.findAll({
-      include: [
-        {
-          model: Interview,
-          attributes: [],
-        },
-        {
-          model: Test,
-          attributes: [],
-        }
-      ],
-    });
-
-    const applications = dbApplicationData.map((apps) =>
-      apps.get({ plain: true })
+    const dbApplicationData = await Application.findAll(
+    //   {
+    //   include: [
+    //     {
+    //       model: Interview,
+    //       attributes: [],
+    //     },
+    //     {
+    //       model: Test,
+    //       attributes: [],
+    //     }
+    //   ],
+    // }
     );
 
-    res.render('homepage', {
-      applications,
-      loggedIn: req.session.loggedIn,
-    });
+    res.status(200).json(dbApplicationData);
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
+
+  //   const applications = dbApplicationData.map((apps) =>
+  //     apps.get({ plain: true })
+  //   );
+
+  //   res.render('homepage', {
+  //     applications,
+  //     loggedIn: req.session.loggedIn,
+  //   });
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json(err);
+  // }
 });
 
-router.post("/", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
   // create a new application
   try {
     const applicationData = await Application.create({
