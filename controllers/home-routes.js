@@ -1,26 +1,33 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
+const { Application } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
-// GET all galleries for homepage
+// Need GET, POST, PUT, and DELETE routes for the job applications.
+// These will be presented on the home page after user login using handlebars
+
+// GET all applications for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findAll({
+    const dbApplicationData = await Application.findAll({
       include: [
         {
-          model: Painting,
-          attributes: ['filename', 'description'],
+          model: Interview,
+          attributes: [],
         },
+        {
+          model: Test,
+          attributes: [],
+        }
       ],
     });
 
-    const galleries = dbGalleryData.map((gallery) =>
-      gallery.get({ plain: true })
+    const applications = dbApplicationData.map((apps) =>
+      apps.get({ plain: true })
     );
 
     res.render('homepage', {
-      galleries,
+      applications,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -29,33 +36,30 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one gallery
-// Use the custom middleware before allowing the user to access the gallery
-router.get('/gallery/:id', withAuth, async (req, res) => {
-  try {
-    const dbGalleryData = await Gallery.findByPk(req.params.id, {
-      include: [
-        {
-          model: Painting,
-          attributes: [
-            'id',
-            'title',
-            'artist',
-            'exhibition_date',
-            'filename',
-            'description',
-          ],
-        },
-      ],
-    });
+// // GET one application
+// // Use the custom middleware before allowing the user to access the gallery
+// router.get('/application/:id', withAuth, async (req, res) => {
+//   try {
+//     const dbApplicationData = await Application.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: Interview,
+//           attributes: [],
+//         },
+//         {
+//           model: Test,
+//           attributes: [],
+//         }
+//       ],
+//     });
 
-    const gallery = dbGalleryData.get({ plain: true });
-    res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//     const gallery = dbGalleryData.get({ plain: true });
+//     res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 // GET one painting
 // Use the custom middleware before allowing the user to access the painting
