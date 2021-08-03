@@ -11,6 +11,6 @@ const applicationData = [
     }
 ];
 
-const seedApplications = () => Painting.bulkCreate(applicationData);
+const seedApplications = () => Application.bulkCreate(applicationData);
 
 module.exports = seedApplications;

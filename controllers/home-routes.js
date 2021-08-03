@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Application } = require('../models');
+const { Application, Interview, Test } = require('../models');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
 
@@ -7,7 +7,7 @@ const withAuth = require('../utils/auth');
 // These will be presented on the home page after user login using handlebars
 
 // GET all applications for homepage
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const dbApplicationData = await Application.findAll({
       include: [
@@ -36,52 +36,76 @@ router.get('/', async (req, res) => {
   }
 });
 
-// // GET one application
-// // Use the custom middleware before allowing the user to access the gallery
-// router.get('/application/:id', withAuth, async (req, res) => {
-//   try {
-//     const dbApplicationData = await Application.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: Interview,
-//           attributes: [],
-//         },
-//         {
-//           model: Test,
-//           attributes: [],
-//         }
-//       ],
-//     });
-
-//     const gallery = dbGalleryData.get({ plain: true });
-//     res.render('gallery', { gallery, loggedIn: req.session.loggedIn });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
-// GET one painting
-// Use the custom middleware before allowing the user to access the painting
-router.get('/painting/:id', withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
+  // create a new application
   try {
-    const dbPaintingData = await Painting.findByPk(req.params.id);
-
-    const painting = dbPaintingData.get({ plain: true });
-
-    res.render('painting', { painting, loggedIn: req.session.loggedIn });
+    const applicationData = await Application.create({
+      company_name: req.body.company_name,
+      role: req.body.role,
+      job_url: req.body.job_url,
+      submission_date: req.body.submission_date,
+      date_found: req.body.date_found,
+      user_id: req.body.user_id,
+    });
+    // if the application is successfully created, the new response will be returned as json
+    res.status(200).json(applicationData);
   } catch (err) {
-    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+// Update an application by id
+router.put('/:id', async (req, res) => {
+  try {
+    const applicationData = await Application.update(
+    {
+      company_name: req.body.company_name,
+      role: req.body.role,
+      job_url: req.body.job_url,
+      submission_date: req.body.submission_date,
+      date_found: req.body.date_found,
+      user_id: req.body.user_id,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    });
+    // if the application is successfully updated, the new response will be returned as json
+    res.status(200).json(applicationData);
+  } catch (err) {
+      res.status(500).json(err);
+    };
+});
+
+router.delete("/:id", async (req, res) => {
+  // delete a application by its `id` value
+  try {
+    const applicationData = await Application.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!applicationData) {
+      res.status(404).json({ message: "No application found with this id!" });
+      return;
+    }
+
+    res.status(200).json(applicationData);
+  } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// Login route
 router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
-
+  // Otherwise, render the 'login' template
   res.render('login');
 });
 
