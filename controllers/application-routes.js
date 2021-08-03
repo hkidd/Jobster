@@ -4,6 +4,8 @@ const { Application, Interview, Test } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Need GET, POST, PUT, and DELETE routes for the job applications.
+// 
+
 // These will be presented on the home page after user login using handlebars
 
 // GET all applications for homepage
@@ -24,23 +26,23 @@ router.get('/', async (req, res) => {
     // }
     );
 
-    res.status(200).json(dbApplicationData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-
-  //   const applications = dbApplicationData.map((apps) =>
-  //     apps.get({ plain: true })
-  //   );
-
-  //   res.render('homepage', {
-  //     applications,
-  //     loggedIn: req.session.loggedIn,
-  //   });
+  //   res.status(200).json(dbApplicationData);
   // } catch (err) {
-  //   console.log(err);
-  //   res.status(500).json(err);
+  //   res.status(400).json(err);
   // }
+
+    const applications = dbApplicationData.map((apps) =>
+      apps.get({ plain: true })
+    );
+
+    res.render('homepage', {
+      applications,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.post("/", async (req, res) => {

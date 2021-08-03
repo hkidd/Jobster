@@ -1,3 +1,6 @@
+// Outlines all of the table relationships
+
+
 const User = require('./User');
 const Application = require('./Application');
 const Interview = require('./Interview');
