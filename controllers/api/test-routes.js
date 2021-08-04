@@ -25,9 +25,9 @@ router.post('/test', withAuth, async (req, res) => {
     console.log("post route")
     try {
         const testData = await Test.create({
-            interview_date: req.body.company_name,
-            thank_you_note_sent: req.body.role,
-            follow_up_email: req.body.job_url,
+            test_date: req.body.test_date,
+            concepts: req.body.concepts,
+            passed: req.body.passed,
         });
         // if the test is successfully created, the new response will be returned as json
         res.status(200).json(testData);
@@ -42,9 +42,9 @@ router.put('/test/:id', withAuth, async (req, res) => {
     console.log("post route")
     try {
         const testData = await Test.create({
-            interview_date: req.body.company_name,
-            thank_you_note_sent: req.body.role,
-            follow_up_email: req.body.job_url,
+            test_date: req.body.test_date,
+            concepts: req.body.concepts,
+            passed: req.body.passed,
         });
         // if the test is successfully updated, the new response will be returned as json
         res.status(200).json(testData);

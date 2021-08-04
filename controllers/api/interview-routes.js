@@ -40,9 +40,9 @@ router.post("/interview/", withAuth, async(req, res) => {
     console.log("post route")
     try {
         const interviewData = await Interview.create({
-            interview_date: req.body.company_name,
-            thank_you_note_sent: req.body.role,
-            follow_up_email: req.body.job_url,
+            interview_date: req.body.interview_date,
+            thank_you_note_sent: req.body.thank_you_note_sent,
+            follow_up_email: req.body.follow_up_email,
         });
         // if the interview is successfully created, the new response will be returned as json
         res.status(200).json(interviewData);
@@ -57,9 +57,9 @@ router.put('/interview/:id', withAuth, async (req, res) => {
     // Update an interview by id
     try {
         const interviewData = await Interview.update({
-            interview_date: req.body.company_name,
-            thank_you_note_sent: req.body.role,
-            follow_up_email: req.body.job_url,
+            interview_date: req.body.interview_date,
+            thank_you_note_sent: req.body.thank_you_note_sent,
+            follow_up_email: req.body.follow_up_email,
         }, {
             where: {
                 id: req.params.id,
