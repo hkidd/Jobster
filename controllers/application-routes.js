@@ -45,6 +45,7 @@ router.get('/', withAuth, async(req, res) => {
 
 router.post("/", withAuth, async(req, res) => {
     // create a new application
+    console.log("post route")
     try {
         const applicationData = await Application.create({
             company_name: req.body.company_name,
@@ -129,17 +130,36 @@ router.get('/signup', (req, res) => {
 
 // About us route
 router.get('/aboutus', (req, res) => {
-  res.render('aboutus');
+    res.render('aboutus');
 });
 
 // New job application route
 router.get('/newApp', (req, res) => {
+    // create a new application
+    // try {
+    //     const applicationData = await Application.create({
+    //         company_name: req.body.company_name,
+    //         role: req.body.role,
+    //         job_url: req.body.job_url,
+    //         submission_date: req.body.submission_date,
+    //         date_found: req.body.date_found,
+    //         user_id: req.body.user_id,
+    //     });
+    //     // if the application is successfully created, the new response will be returned as json
+    //     res.status(200).json(applicationData);
+    // } catch (err) {
+    //     res.status(400).json(err);
+    // }
     res.render('newApp');
 });
 
 // Edit application route
 router.get('/editApp', (req, res) => {
     res.render('editApp');
+});
+// User Info route
+router.get('/userInfo', (req, res) => {
+    res.render('userInfo');
 });
 
 module.exports = router;
