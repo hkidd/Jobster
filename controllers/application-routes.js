@@ -4,7 +4,6 @@ const { Application, Interview, Test } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Need GET, POST, PUT, and DELETE routes for the job applications.
-// 
 
 // These will be presented on the home page after user login using handlebars
 

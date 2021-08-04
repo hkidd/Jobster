@@ -1,6 +1,6 @@
 // Here, this file is grabbing the user input from the sign up sheet
   // This should then be sent to the back end at /api/users to POST a new user
-  // If successful, they are also routed to the homepage
+  // If successful, they are routed to the homepage
   // If not, error is displayed and can try to sign up again
 
   const signupFormHandler = async (event) => {
