@@ -123,8 +123,12 @@ router.get('/signup', (req, res) => {
     // Otherwise, render the 'signup' template
     res.render('signup');
 });
-
+// New job application route
 router.get('/newApp', (req, res) => {
     res.render('newApp');
+});
+// Edit application route
+router.get('/editApp', (req, res) => {
+    res.render('editApp');
 });
 module.exports = router;
