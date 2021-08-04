@@ -7,6 +7,7 @@ const applicationData = [
         job_url: 'google.com',
         submission_date: 'July 15, 2021',
         date_found: 'July 15, 2021',
+        application_status: 'Application submitted',
         user_id: 1
     },
     {
@@ -15,6 +16,7 @@ const applicationData = [
         job_url: 'indeed.com',
         submission_date: 'July 15, 2021',
         date_found: 'July 15, 2021',
+        application_status: 'Prep for phone interview',
         user_id: 1
     },
 ];

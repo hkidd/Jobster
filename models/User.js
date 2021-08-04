@@ -1,7 +1,6 @@
 // This user model sets up the user table for the database
 // Also bcrypts the password
 
-
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
