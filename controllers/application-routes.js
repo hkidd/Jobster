@@ -11,6 +11,10 @@ const withAuth = require('../utils/auth');
 
 // GET all applications for homepage
 router.get('/', withAuth, async(req, res) => {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 74292f3c573fde3ba54b9ae40f4eb142e41c8f0b
     try {
         const dbApplicationData = await Application.findAll({
             include: [{
@@ -139,5 +143,7 @@ router.get('/newApp', (req, res) => {
 router.get('/editApp', (req, res) => {
     res.render('editApp');
 });
+
+
 module.exports = router;
 
