@@ -8,7 +8,8 @@ const withAuth = require('../utils/auth');
 // These will be presented on the home page after user login using handlebars
 
 // GET all applications for homepage
-router.get('/', async(req, res) => {
+router.get('/', withAuth, async(req, res) => {
+    
     try {
         const dbApplicationData = await Application.findAll({
             include: [{
@@ -41,7 +42,7 @@ router.get('/', async(req, res) => {
     }
 });
 
-router.post("/", async(req, res) => {
+router.post("/", withAuth, async(req, res) => {
     // create a new application
     try {
         const applicationData = await Application.create({
@@ -60,7 +61,7 @@ router.post("/", async(req, res) => {
 });
 
 // Update an application by id
-router.put('/:id', async(req, res) => {
+router.put('/:id', withAuth, async(req, res) => {
     try {
         const applicationData = await Application.update({
             company_name: req.body.company_name,
@@ -81,7 +82,7 @@ router.put('/:id', async(req, res) => {
     };
 });
 
-router.delete("/:id", async(req, res) => {
+router.delete("/:id", withAuth, async(req, res) => {
     // delete a application by its `id` value
     try {
         const applicationData = await Application.destroy({
@@ -137,5 +138,7 @@ router.get('/newApp', (req, res) => {
 router.get('/editApp', (req, res) => {
     res.render('editApp');
 });
+
+
 module.exports = router;
 
