@@ -7,14 +7,10 @@ const withAuth = require('../utils/auth');
 
 // These will be presented on the home page after user login using handlebars
 
-// Authenticates 
+// Authentication function is running to check for logged in user 
 
 // GET all applications for homepage
 router.get('/', withAuth, async(req, res) => {
-<<<<<<< HEAD
-=======
-    
->>>>>>> 74292f3c573fde3ba54b9ae40f4eb142e41c8f0b
     try {
         const dbApplicationData = await Application.findAll({
             include: [{
