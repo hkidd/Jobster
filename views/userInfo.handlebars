@@ -1,13 +1,12 @@
 <h1>User Profile</h1>
 <container class="userInfo">
-<figure class="figure">
-  <img src="..." class="figure-img img-fluid rounded" alt="...">
-  <figcaption class="figure-caption">User Photo</figcaption>
-    <p>Click here to upload your photo! <label for="formFile" class="form-label"> </label>
-  <input class="form-control" type="file" id="formFile"></p>
-  
-</figure>
-<br><br><br>
+  <img src="..." class="img-thumbnail" alt="...">
+<input id="article_file_input" type="file" name="article_picture" style="display: none;">
+    <p>Click
+    <a onclick="$('input[id=article_file_input]').click();">here</a>
+     to change your picture
+    <p>
+<br>
  <div class="">
     <label for="jobURL" class="col-form-label">Name:  </label>
     <div class="">
