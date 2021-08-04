@@ -8,7 +8,11 @@
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
 }
-
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
 body {
   font-family: Arial;
   margin: 0;
@@ -18,29 +22,24 @@ body {
   justify-content: flex-start;
   background-color: var(--quatrinary);
 }
-
 a {
   color: var(--dark);
   text-decoration: none;
 }
-
 a:visited {
   color: inherit;
 }
-
 header {
-  padding: 40px;
+  padding: 0px;
   text-align: center;
   background: var(--primary);
   color: var(--light);
 }
-
 main {
   display: flex;
   flex-wrap: wrap;
   flex-grow: 1;
 }
-
 aside {
   flex: 0;
   background-color: var(--tertiary);
@@ -48,34 +47,20 @@ aside {
   text-align: left;
   color: var(--light);
 }
-
 nav {
   display: flex;
   background-color: var(--secondary);
 }
-
 nav a {
   color: var(--light);
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
 }
-
 nav a:hover {
   color: var(--secondary);
   background-color: var(--dark);
 }
-
-.gallery {
-  flex: 4;
-  background-color: #fff;
-  padding: 50px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-}
-
 .btn-no-style {
   background: none;
   border: none;
@@ -86,25 +71,19 @@ nav a:hover {
   transition: color 0.1s;
   margin-left: 16px;
 }
-
 img {
   max-width: 100%;
   height: auto;
 }
-
-.painting {
-  width: 50%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
+.app {
+  width: 100%;
 }
-
-.painting-details {
+form {
+  max-width: 100%;
   text-align: center;
   padding: 10px 20px;
   font-weight: bold;
 }
-
 /* CARDS */
 .card {
   margin: 20px;
@@ -114,7 +93,6 @@ img {
   background-color: var(--light);
   color: var(--dark);
 }
-
 .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
@@ -127,7 +105,6 @@ img {
   background-color: #4456f8;
   color: var(--light);
 }
-
 .card header {
   color: var(--light);
   font-weight: bold;
@@ -137,24 +114,11 @@ img {
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
-
 .card-body {
   font-size: 1.4rem;
   text-align: center;
   font-weight: bold;
 }
-
-.gallery-name {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 2px 2px 5px var(--secondary);
-  border: 10px groove var(--light);
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-right: 100px;
-  padding-left: 100px;
-}
-
 /* LAYOUT */
 .container {
   display: flex;

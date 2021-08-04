@@ -129,4 +129,9 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+// About us route
+router.get('/aboutus', (req, res) => {
+  res.render('aboutus');
+});
+
 module.exports = router;
