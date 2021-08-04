@@ -31,22 +31,27 @@ const newAppFormHandler = async (event) => {
     };
 
     // Using this template, need to grab the user input values from the interview section of newApp
-    // const first_name = document.querySelector('#firstname-signup').value.trim();
+    const interview_date = document.querySelector('#interviewDate').value.trim();
+    const thank_you_note_sent = document.querySelector('#noteSent').value.trim();
+    const follow_up_email = document.querySelector('#followUp').value.trim();
 
+    console.log(interview_date);
+    console.log(thank_you_note_sent); 
+    console.log(follow_up_email);
+
+    if (interview_date && thank_you_note_sent && follow_up_email) {
+      const response = await fetch('/api/users/interview/', {
+        method: 'POST',
+        body: JSON.stringify({ company_name, job_url, date_found, role, submission_date}),
+        headers: { 'Content-Type': 'application/json' },
+      });
   
-    // if (first_name && last_name) {
-    //   const response = await fetch('/api/users/interview', {
-    //     method: 'POST',
-    //     body: JSON.stringify({ first_name, last_name }),
-    //     headers: { 'Content-Type': 'application/json' },
-    //   });
-  
-    //   if (response.ok) {
-    //     document.location.replace('/');
-    //   } else {
-    //     alert('Failed to add new application.');
-    //   }
-    // }
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to add new application.');
+      }
+    };
 
     // Using this template, need to grab the user input values from the application section of newApp
   //   const first_name = document.querySelector('#firstname-signup').value.trim();
