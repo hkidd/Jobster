@@ -8,7 +8,7 @@ const signupFormHandler = async (event) => {
 
   
     if (first_name && last_name) {
-      const response = await fetch('/api/users/signup', {
+      const response = await fetch('/api/users/application', {
         method: 'POST',
         body: JSON.stringify({ first_name, last_name }),
         headers: { 'Content-Type': 'application/json' },
@@ -26,7 +26,7 @@ const signupFormHandler = async (event) => {
 
   
     if (first_name && last_name) {
-      const response = await fetch('/api/users/signup', {
+      const response = await fetch('/api/users/interview', {
         method: 'POST',
         body: JSON.stringify({ first_name, last_name }),
         headers: { 'Content-Type': 'application/json' },
@@ -44,7 +44,7 @@ const signupFormHandler = async (event) => {
 
   
     if (first_name && last_name) {
-      const response = await fetch('/api/users/signup', {
+      const response = await fetch('/api/users/test', {
         method: 'POST',
         body: JSON.stringify({ first_name, last_name }),
         headers: { 'Content-Type': 'application/json' },
