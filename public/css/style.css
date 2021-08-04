@@ -9,6 +9,12 @@
     --border-radius: 0.3rem;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
 body {
     font-family: Arial;
     margin: 0;
@@ -66,16 +72,6 @@ nav a:hover {
     background-color: var(--dark);
 }
 
-.gallery {
-    flex: 4;
-    background-color: #fff;
-    padding: 50px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-}
-
 .btn-no-style {
     background: none;
     border: none;
@@ -90,6 +86,10 @@ nav a:hover {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.app {
+    width: 100%;
 }
 
 form {
@@ -138,17 +138,6 @@ form {
     font-size: 1.4rem;
     text-align: center;
     font-weight: bold;
-}
-
-.gallery-name {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 5px var(--secondary);
-    border: 10px groove var(--light);
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-right: 100px;
-    padding-left: 100px;
 }
 
 
