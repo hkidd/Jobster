@@ -52,6 +52,7 @@ router.post("/", withAuth, async(req, res) => {
             job_url: req.body.job_url,
             submission_date: req.body.submission_date,
             date_found: req.body.date_found,
+            application_status: req.body.application_status,
             user_id: req.body.user_id,
         });
         // if the application is successfully created, the new response will be returned as json
@@ -135,11 +136,10 @@ router.get('/aboutus', (req, res) => {
 router.get('/newApp', (req, res) => {
     res.render('newApp');
 });
+
 // Edit application route
 router.get('/editApp', (req, res) => {
     res.render('editApp');
 });
 
-
 module.exports = router;
-
