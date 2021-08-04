@@ -130,7 +130,7 @@ router.get('/signup', (req, res) => {
 
 // About us route
 router.get('/aboutus', (req, res) => {
-  res.render('aboutus');
+    res.render('aboutus');
 });
 
 // New job application route
@@ -156,7 +156,11 @@ router.get('/newApp', (req, res) => {
 router.get('/editApp', (req, res) => {
     res.render('editApp');
 });
+// User Info route
+router.get('/userInfo', (req, res) => {
+    res.render('userInfo');
+});
+
 
 
 module.exports = router;
-
