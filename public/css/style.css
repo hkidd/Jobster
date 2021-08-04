@@ -24,29 +24,24 @@ body {
     justify-content: flex-start;
     background-color: var(--quatrinary);
 }
-
 a {
     color: var(--dark);
     text-decoration: none;
 }
-
 a:visited {
     color: inherit;
 }
-
 header {
     padding: 0px;
     text-align: center;
     background: var(--primary);
     color: var(--light);
 }
-
 main {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
 }
-
 aside {
     flex: 0;
     background-color: var(--tertiary);
@@ -54,23 +49,21 @@ aside {
     text-align: left;
     color: var(--light);
 }
-
 nav {
     display: flex;
     background-color: var(--secondary);
 }
-
 nav a {
     color: var(--light);
     padding: 14px 20px;
     text-decoration: none;
     text-align: center;
 }
-
 nav a:hover {
     color: var(--secondary);
     background-color: var(--dark);
 }
+
 
 .btn-no-style {
     background: none;
@@ -82,11 +75,11 @@ nav a:hover {
     transition: color 0.1s;
     margin-left: 16px;
 }
-
 img {
     max-width: 100%;
     height: auto;
 }
+
 
 .app {
     width: 100%;
@@ -99,7 +92,6 @@ form {
     font-weight: bold;
 }
 
-
 /* CARDS */
 
 .card {
@@ -110,7 +102,6 @@ form {
     background-color: var(--light);
     color: var(--dark);
 }
-
 .login-card {
     margin: 0 0 20px 0;
     flex: 0 0 50%;
@@ -123,7 +114,6 @@ form {
     background-color: #4456f8;
     color: var(--light);
 }
-
 .card header {
     color: var(--light);
     font-weight: bold;
@@ -133,13 +123,11 @@ form {
     padding: 0.625rem;
     border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
-
 .card-body {
     font-size: 1.4rem;
     text-align: center;
     font-weight: bold;
 }
-
 
 /* LAYOUT */
 
