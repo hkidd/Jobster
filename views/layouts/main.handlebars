@@ -31,10 +31,11 @@
     <h2>Where we take you from <em>unemployed</em> to <em>I'm employed</em>!</h2>
   </header>
   <nav>
-    <a href="/">Summary</a>
-    <a href="/aboutus">Home</a>
+    <a href="/">Home</a>
+    <a href="/aboutus">About Us</a>
     {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
+    <a href="/newApp">New Application</a>
+    <button id="logout" class="btn">Logout</button>
     {{else}}
     <a href="/login">Login</a>
     <a href="/signup">Sign Up</a>
