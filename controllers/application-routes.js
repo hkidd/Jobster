@@ -152,6 +152,7 @@ router.get('/newApp', (req, res) => {
     // }
     res.render('newApp');
 });
+
 // Edit application route
 router.get('/editApp', (req, res) => {
     res.render('editApp');
@@ -160,7 +161,5 @@ router.get('/editApp', (req, res) => {
 router.get('/userInfo', (req, res) => {
     res.render('userInfo');
 });
-
-
 
 module.exports = router;
