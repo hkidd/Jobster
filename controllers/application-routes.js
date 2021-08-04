@@ -45,6 +45,7 @@ router.get('/', withAuth, async(req, res) => {
 
 router.post("/", withAuth, async(req, res) => {
     // create a new application
+    console.log("post route")
     try {
         const applicationData = await Application.create({
             company_name: req.body.company_name,
