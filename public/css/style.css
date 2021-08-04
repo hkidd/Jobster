@@ -27,15 +27,15 @@ body {
 }
 
 h1 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 h2 {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 font a {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   color: var(--dark);
   text-decoration: none;
 }
@@ -67,7 +67,7 @@ aside {
 }
 
 nav {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   display: flex;
   background-color: var(--secondary);
 }
@@ -104,6 +104,7 @@ img {
   background-color: #ffd166;
   width: 70%;
   margin: auto;
+  text-align: center;
 }
 
 form {
@@ -146,6 +147,7 @@ form {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 
 .features-card {
   align-items: center;
@@ -193,6 +195,32 @@ form {
   font-size: 1.4rem;
   text-align: center;
   font-weight: bold;
+}
+
+.userInfo {
+  margin: 10px;
+  align-items: center;
+}
+
+.col {
+  margin: 10px;
+  text-align: center;
+}
+
+h1 {
+  color: #003566;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-label {
+  color: #003566;
+  text-align: left;
+}
+
+.userInfo {
+  text-align: center;
 }
 /* LAYOUT */
 
