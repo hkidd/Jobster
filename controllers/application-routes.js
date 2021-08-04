@@ -33,6 +33,8 @@ router.get('/', withAuth, async(req, res) => {
             apps.get({ plain: true })
         );
 
+        console.log(applications);
+
         res.render('homepage', {
             applications,
             loggedIn: req.session.loggedIn,
@@ -63,8 +65,8 @@ router.post("/", withAuth, async(req, res) => {
     }
 });
 
-// Update an application by id
 router.put('/:id', withAuth, async(req, res) => {
+  // Update an application by id
     try {
         const applicationData = await Application.update({
             company_name: req.body.company_name,
