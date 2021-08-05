@@ -133,7 +133,9 @@ router.get('/signup', (req, res) => {
 
 // About us route
 router.get('/aboutus', (req, res) => {
-    res.render('aboutus');
+    res.render('aboutus', {
+      loggedIn: req.session.loggedIn
+    });
 });
 
 // New job application route
@@ -153,16 +155,22 @@ router.get('/newApp', (req, res) => {
     // } catch (err) {
     //     res.status(400).json(err);
     // }
-    res.render('newApp');
+    res.render('newApp', {
+      loggedIn: req.session.loggedIn
+    });
 });
 
 // Edit application route
 router.get('/editApp', (req, res) => {
-    res.render('editApp');
+    res.render('editApp', {
+      loggedIn: req.session.loggedIn
+    });
 });
 // User Info route
 router.get('/userInfo', (req, res) => {
-    res.render('userInfo');
+    res.render('userInfo', {
+      loggedIn: req.session.loggedIn
+    });
 });
 
 module.exports = router;
