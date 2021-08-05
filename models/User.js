@@ -42,6 +42,18 @@ User.init(
         len: [6],
       },
     },
+    image_url: {
+      type: DataTypes.STRING,
+    },
+    resume_url: {
+      type: DataTypes.STRING,
+    },
+    coverletter_url: {
+      type: DataTypes.STRING,
+    },
+    thankyounote_url: {
+      type: DataTypes.STRING,
+    }
   },
   {
     hooks: {
