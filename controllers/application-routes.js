@@ -11,8 +11,10 @@ const withAuth = require('../utils/auth');
 
 // GET all applications for homepage
 router.get('/', withAuth, async(req, res) => {
+    
     try {
         const dbApplicationData = await Application.findAll({
+          where: {user_id: req.session.user},
             include: [{
                     model: Interview,
                     attributes: ["id", "interview_number", "interview_date", "thank_you_note_sent", "follow_up_email", "application_id"],
@@ -22,7 +24,8 @@ router.get('/', withAuth, async(req, res) => {
                     attributes: ["id", "test_date", "concepts", "passed", "application_id"],
                 }
             ],
-        });
+        }, 
+      );
 
         //   res.status(200).json(dbApplicationData);
         // } catch (err) {
@@ -32,8 +35,6 @@ router.get('/', withAuth, async(req, res) => {
         const applications = dbApplicationData.map((apps) =>
             apps.get({ plain: true })
         );
-
-        console.log(applications);
 
         res.render('homepage', {
             applications,
@@ -56,7 +57,7 @@ router.post("/", withAuth, async(req, res) => {
             submission_date: req.body.submission_date,
             date_found: req.body.date_found,
             application_status: req.body.application_status,
-            user_id: req.body.user_id,
+            user_id: req.session.user,
         });
         // if the application is successfully created, the new response will be returned as json
         res.status(200).json(applicationData);
@@ -74,7 +75,7 @@ router.put('/:id', withAuth, async(req, res) => {
             job_url: req.body.job_url,
             submission_date: req.body.submission_date,
             date_found: req.body.date_found,
-            user_id: req.body.user_id,
+            user_id: req.session.user,
         }, {
             where: {
                 id: req.params.id,
@@ -132,9 +133,10 @@ router.get('/signup', (req, res) => {
 
 // About us route
 router.get('/aboutus', (req, res) => {
-    res.render('aboutus');
+    res.render('aboutus', {
+      loggedIn: req.session.loggedIn
+    });
 });
-
 // New job application route
 router.get('/newApp', (req, res) => {
     // create a new application
@@ -152,16 +154,21 @@ router.get('/newApp', (req, res) => {
     // } catch (err) {
     //     res.status(400).json(err);
     // }
-    res.render('newApp');
+    res.render('newApp', {
+      loggedIn: req.session.loggedIn
+    });
 });
-
 // Edit application route
 router.get('/editApp', (req, res) => {
-    res.render('editApp');
+    res.render('editApp', {
+      loggedIn: req.session.loggedIn
+    });
 });
 // User Info route
 router.get('/userInfo', (req, res) => {
-    res.render('userInfo');
+    res.render('userInfo', {
+      loggedIn: req.session.loggedIn
+    });
 });
 
 module.exports = router;
