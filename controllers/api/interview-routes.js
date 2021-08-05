@@ -37,7 +37,7 @@ router.get('/interview/', withAuth, async (req, res) => {
 
 
 // POST
-router.post("/interview", withAuth, async(req, res) => {
+router.post("/interview/", withAuth, async(req, res) => {
     // create a new interview
     console.log("post route")
     try {
