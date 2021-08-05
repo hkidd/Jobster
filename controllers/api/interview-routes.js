@@ -12,6 +12,8 @@ router.get('/interview/', withAuth, async (req, res) => {
             include: [],
         });
 
+        console.log(dbInterviewData);
+
           res.status(200).json(dbInterviewData);
         } catch (err) {
           res.status(400).json(err);
