@@ -30,11 +30,8 @@ min-height: 100vh;
 justify-content: flex-start;
 background-color: var(--quatrinary);
 }
-
-
   
-  
-  {
+h1{
 font-family: 'Josefin Sans', sans-serif;
 }
 
