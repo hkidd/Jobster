@@ -1,38 +1,44 @@
 <header>
     <h1>New Job Application</h1>
-<container class="newAppForm">
-<form>
-  <div class="">
+    <div class="container">
+  <div class="row align-items-start">
+    <div class="col">
+    <div class="company">
     <label for="inputCompany" class="col-form-label">Company: </label>
     <div class="">
       <input type="company" class="form-control" id="inputCompany">
     </div>
   </div>
-  <div class="">
+  <br>
+  <div class="job">
     <label for="jobURL" class="col-form-label">Job Posting URL: </label>
     <div class="">
       <input type="jobURL" class="form-control" id="jobURL">
     </div>
   </div>
-   <div class="">
+  <br>
+   <div class="datefound">
     <label for="dateFound" class="col-form-label">Date Job Was Found: </label>
     <div class="">
       <input type="date" class="form-control" id="dateFound">
     </div>
   </div>
-   <div class="">
+  <br>
+   <div class="role">
     <label for="role" class="col-form-label">Role: </label>
     <div class="">
       <input type="role" class="form-control" id="role">
     </div>
   </div>
-    <div class="">
-    <label for="dateApplied" class="col-form-label">Date Applied To: </label>
+  <br>
+    <div class="applied">
+    <label for="dateApplied" class="col-form-label">Date Applied: </label>
     <div class="">
       <input type="date" class="form-control" id="dateApplied">
     </div>
   </div>
-  <div class="">
+  <br>
+  <div class="toDos">
     <div class="offset-sm-2">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck1">
@@ -43,7 +49,7 @@
       </div>
     </div>
   </div>
-  <div class="">
+  <div class="toDos">
     <div class="offset-sm-2">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck1">
@@ -53,26 +59,15 @@
       </div>
     </div>
   </div>
-  
-  <div class="">
+  <br><br>
+  <div class="interviewDate">
     <label for="interviewDate" class="col-form-label">Date Of Interview: </label>
     <div class="">
       <input type="date" class="form-control" id="interviewDate">
     </div>
   </div>
-<div class="">
-    <label for="noteSent" class="col-form-label">Thank You Note Sent: </label>
-    <div class="">
-      <input type="input" class="form-control" id="noteSent">
-    </div>
-  </div>
-  <div class="">
-    <label for="followUp" class="col-form-label">Follow-Up Email Sent: </label>
-    <div class="">
-      <input type="input" class="form-control" id="followUp">
-    </div>
-  </div>
-   <div class="">
+  <br>
+   <div class="todo">
     <div class="offset-sm-2">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck1">
@@ -83,7 +78,7 @@
       </div>
     </div>
   </div>
-  <div class="">
+  <div class="todo">
     <div class="offset-sm-2">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck1">
@@ -93,25 +88,31 @@
       </div>
     </div>
   </div>
-<div class="">
+    </div>
+    <br><br>
+    <div class="col">
+      <div class="test">
     <label for="testDate" class="col-form-label">Date Of Efficiency Test: </label>
     <div class="">
       <input type="date" class="form-control" id="testDate">
     </div>
   </div>
-  <div class="">
+  <br>
+  <div class="concepts">
     <label for="conceptsTested" class="col-form-label">Concepts Tested: </label>
     <div class="">
       <input type="input" class="form-control" id="conceptsTested">
     </div>
   </div>
-  <div class="">
+  <br>
+  <div class="passed">
     <label for="passed" class="col-form-label">Passed: </label>
     <div class="">
       <input type="input" class="form-control" id="passed">
     </div>
   </div>
-  <div class="">
+  <br>
+  <div class="todo">
     <div class="offset-sm-2">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck1">
@@ -132,8 +133,26 @@
       </div>
     </div>
   </div>
+  <br>
+  <p>Application Status</p>
+  
+<div class="select is-rounded">
+                        <select class=".is-arrowless" id="genreSel">
+                          <option>Select Application Status</option>
+                          <option value="Prep for Phone Interview">Prep for Phone Interview</option>
+                          <option value="Phone Interview Complete">Phone Interview Complete</option>
+                          <option value="Prep for Onsite Interview">Prep for Onsite Interview</option>
+                          <option value="Onsite Interview Complete">Onsite Interview Complete</option>
+                          <option value="Prep for Proficiency Test">Prep for Proficiency Test</option>
+                          <option value="Passed Proficiency Test">Passed Proficiency Test</option>
+                          <option value="Failed Proficiency Test">Failed Proficiency Test</option>
+                          <option value="Offer Received">Offer Received</option>
+                          <option value="Accepted Offer">Accepted Offer</option>
+                          <option value="Declined Offer">Declined Offer</option>
+                        </select>
+                    </div><br><br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+    </div>
+  </div>
 </container>
-
-<script src="./js/newApp.js"></script>
