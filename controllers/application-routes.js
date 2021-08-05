@@ -72,9 +72,16 @@ router.post("/", withAuth, async (req, res) => {
       application_status: req.body.application_status,
       user_id: req.session.user
     });
+
+    console.log(applicationData.dataValues.id);
+
+    req.session.save(() => {
+      req.session.applicationId = applicationData.dataValues.id;
+    
     // if the application is successfully created, the new response will be returned as json
     res.status(200).json(applicationData);
-  } catch (err) {
+  });
+ } catch (err) {
     res.status(400).json(err);
   }
 });
@@ -169,6 +176,20 @@ router.get("/editApp", (req, res) => {
 // User Info route
 router.get("/userInfo", (req, res) => {
   res.render("userInfo", {
+    loggedIn: req.session.loggedIn,
+    user_id: req.session.user
+  });
+});
+// New interview route (part of application)
+router.get("/newInt", (req, res) => {
+  res.render("newInt", {
+    loggedIn: req.session.loggedIn,
+    user_id: req.session.user
+  });
+});
+// New test route (part of application)
+router.get("/newTest", (req, res) => {
+  res.render("newTest", {
     loggedIn: req.session.loggedIn,
     user_id: req.session.user
   });
