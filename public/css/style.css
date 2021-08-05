@@ -10,6 +10,7 @@
 --border-radius: 0.3rem;
 }
 
+
 html {
 scroll-behavior: smooth;
 }
@@ -30,7 +31,10 @@ justify-content: flex-start;
 background-color: var(--quatrinary);
 }
 
-h1 {
+
+  
+  
+  {
 font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -215,10 +219,10 @@ padding-left: 80px;
 }
 
 h1 {
-color: #003566;
-margin-top: 20px;
-margin-bottom: 20px;
-text-align: center;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .form-label {
