@@ -45,7 +45,6 @@ router.post("/interview/", withAuth, async(req, res) => {
             interview_date: req.body.interview_date,
             thank_you_note_sent: req.body.thank_you_note_sent,
             follow_up_email: req.body.follow_up_email,
-            application_id: req.body.application_id,
         });
         // if the interview is successfully created, the new response will be returned as json
         res.status(200).json(interviewData);
