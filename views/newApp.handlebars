@@ -1,5 +1,6 @@
 <header>
     <h1>New Job Application</h1>
+<form class="newAppForm">
     <div class="container">
   <div class="row align-items-start">
     <div class="col">
@@ -17,7 +18,7 @@
     </div>
   </div>
   <br>
-   <div class="datefound">
+   <div class="dateFound">
     <label for="dateFound" class="col-form-label">Date Job Was Found: </label>
     <div class="">
       <input type="date" class="form-control" id="dateFound">
@@ -70,7 +71,7 @@
    <div class="todo">
     <div class="offset-sm-2">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <input class="form-check-input" type="checkbox" id="sendThankYou">
         <label class="form-check-label" for="gridCheck1">
            <p>To Do's: </p>
           Send Thank You Note
@@ -81,7 +82,7 @@
   <div class="todo">
     <div class="offset-sm-2">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <input class="form-check-input" type="checkbox" id="sendFollowUp">
         <label class="form-check-label" for="gridCheck1">
           Send Follow-Up Email
         </label>
@@ -137,7 +138,7 @@
   <p>Application Status</p>
   
 <div class="select is-rounded">
-                        <select class=".is-arrowless" id="genreSel">
+                        <select class=".is-arrowless" id="statusSel">
                           <option>Select Application Status</option>
                           <option value="Prep for Phone Interview">Prep for Phone Interview</option>
                           <option value="Phone Interview Complete">Phone Interview Complete</option>
@@ -156,3 +157,5 @@
     </div>
   </div>
 </container>
+
+<script src="./js/newApp.js"></script>

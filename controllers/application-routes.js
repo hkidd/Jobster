@@ -51,6 +51,7 @@ router.get("/", withAuth, async (req, res) => {
     res.render("homepage", {
       applications,
       loggedIn: req.session.loggedIn,
+      user_id: req.session.user
     });
   } catch (err) {
     console.log(err);
@@ -69,7 +70,7 @@ router.post("/", withAuth, async (req, res) => {
       submission_date: req.body.submission_date,
       date_found: req.body.date_found,
       application_status: req.body.application_status,
-      user_id: req.session.user,
+      user_id: req.session.user
     });
     // if the application is successfully created, the new response will be returned as json
     res.status(200).json(applicationData);
@@ -88,11 +89,10 @@ router.put("/:id", withAuth, async (req, res) => {
         job_url: req.body.job_url,
         submission_date: req.body.submission_date,
         date_found: req.body.date_found,
-        user_id: req.session.user,
       },
       {
         where: {
-          id: req.params.id,
+          id: req.session.user,
         },
       }
     );
@@ -108,7 +108,7 @@ router.delete("/:id", withAuth, async (req, res) => {
   try {
     const applicationData = await Application.destroy({
       where: {
-        id: req.params.id,
+        id: req.session.user,
       },
     });
 
@@ -149,24 +149,28 @@ router.get("/signup", (req, res) => {
 router.get("/aboutus", (req, res) => {
   res.render("aboutus", {
     loggedIn: req.session.loggedIn,
+    user_id: req.session.user
   });
 });
 // New job application route
 router.get("/newApp", (req, res) => {
   res.render("newApp", {
     loggedIn: req.session.loggedIn,
+    user_id: req.session.user
   });
 });
 // Edit application route
 router.get("/editApp", (req, res) => {
   res.render("editApp", {
     loggedIn: req.session.loggedIn,
+    user_id: req.session.user
   });
 });
 // User Info route
 router.get("/userInfo", (req, res) => {
   res.render("userInfo", {
     loggedIn: req.session.loggedIn,
+    user_id: req.session.user
   });
 });
 
