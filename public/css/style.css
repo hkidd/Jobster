@@ -172,8 +172,10 @@ form {
 }
 
 .col {
-    margin: 10px;
+    align-items: center;
     text-align: center;
+    margin-left: 20px;
+    padding-left: 80px;
 }
 
 h1 {
@@ -231,6 +233,10 @@ body {
 }
 
 h1 {
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -409,13 +415,6 @@ form {
 
 .col {
     margin: 10px;
-    text-align: center;
-}
-
-h1 {
-    color: #003566;
-    margin-top: 20px;
-    margin-bottom: 20px;
     text-align: center;
 }
 
