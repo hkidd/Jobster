@@ -14,7 +14,7 @@ router.get('/', withAuth, async(req, res) => {
     
     try {
         const dbApplicationData = await Application.findAll({
-          where: {user_id: req.session.user},
+        where: {user_id: req.session.user},
             include: [{
                     model: Interview,
                     attributes: ["id", "interview_number", "interview_date", "thank_you_note_sent", "follow_up_email", "application_id"],
@@ -25,7 +25,7 @@ router.get('/', withAuth, async(req, res) => {
                 }
             ],
         }, 
-      );
+    );
 
         //   res.status(200).json(dbApplicationData);
         // } catch (err) {
