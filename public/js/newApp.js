@@ -42,7 +42,7 @@ const newAppFormHandler = async (event) => {
     if (interview_date && thank_you_note_sent && follow_up_email) {
       const response = await fetch('/api/users/interview/', {
         method: 'POST',
-        body: JSON.stringify({ company_name, job_url, date_found, role, submission_date}),
+        body: JSON.stringify({ interview_date, thank_you_note_sent, follow_up_email}),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -54,7 +54,7 @@ const newAppFormHandler = async (event) => {
     };
 
     // Using this template, need to grab the user input values from the application section of newApp
-  //   const first_name = document.querySelector('#firstname-signup').value.trim();
+    // const first_name = document.querySelector('#firstname-signup').value.trim();
 
   
   //   if (first_name && last_name) {
