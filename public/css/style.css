@@ -109,6 +109,7 @@ background-color: #ffd166;
 width: 70%;
 margin: auto;
 text-align: center;
+border-radius: 10px;
 }
 
 form {
@@ -129,6 +130,23 @@ flex: 0 1 300px;
 border: 7px double var(--dark);
 border-radius: 10px;
 background-color: var(--light);
+color: var(--dark);
+padding-top: 10px;
+max-width: 80%;
+max-height: 80%;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+.about-login{
+text-align: center;
+align-items: center;
+margin: auto;
+flex: 0 1 300px;
+border: 7px double var(--dark);
+border-radius: 10px;
+background-image: url("./images/office.jpeg");
+background-color: cornflowerblue;
 color: var(--dark);
 padding-top: 10px;
 max-width: 80%;
