@@ -14,8 +14,12 @@ router.post("/signup", async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
+
+    const userId = dbUserData.dataValues.id;
+
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user = userId;
       res.status(200).json(dbUserData);
     });
   } catch (err) {
