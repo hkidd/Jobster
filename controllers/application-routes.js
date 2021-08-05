@@ -14,7 +14,7 @@ router.get('/', withAuth, async(req, res) => {
     
     try {
         const dbApplicationData = await Application.findAll({
-          where: {user_id: req.session.user},
+        where: {user_id: req.session.user},
             include: [{
                     model: Interview,
                     attributes: ["id", "interview_number", "interview_date", "thank_you_note_sent", "follow_up_email", "application_id"],
@@ -25,7 +25,7 @@ router.get('/', withAuth, async(req, res) => {
                 }
             ],
         }, 
-      );
+    );
 
         //   res.status(200).json(dbApplicationData);
         // } catch (err) {
@@ -133,21 +133,42 @@ router.get('/signup', (req, res) => {
 
 // About us route
 router.get('/aboutus', (req, res) => {
-    res.render('aboutus');
+    res.render('aboutus', {
+      loggedIn: req.session.loggedIn
+    });
 });
-
 // New job application route
 router.get('/newApp', (req, res) => {
-    res.render('newApp');
+    // create a new application
+    // try {
+    //     const applicationData = await Application.create({
+    //         company_name: req.body.company_name,
+    //         role: req.body.role,
+    //         job_url: req.body.job_url,
+    //         submission_date: req.body.submission_date,
+    //         date_found: req.body.date_found,
+    //         user_id: req.body.user_id,
+    //     });
+    //     // if the application is successfully created, the new response will be returned as json
+    //     res.status(200).json(applicationData);
+    // } catch (err) {
+    //     res.status(400).json(err);
+    // }
+    res.render('newApp', {
+      loggedIn: req.session.loggedIn
+    });
 });
-
 // Edit application route
 router.get('/editApp', (req, res) => {
-    res.render('editApp');
+    res.render('editApp', {
+      loggedIn: req.session.loggedIn
+    });
 });
 // User Info route
 router.get('/userInfo', (req, res) => {
-    res.render('userInfo');
+    res.render('userInfo', {
+      loggedIn: req.session.loggedIn
+    });
 });
 
 module.exports = router;

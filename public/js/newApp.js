@@ -75,6 +75,7 @@ const newAppFormHandler = async (event) => {
         alert('Failed to add new application.');
       }
     };
+  };
 
   document
   .querySelector('.newAppForm')
