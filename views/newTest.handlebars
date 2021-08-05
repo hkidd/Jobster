@@ -1,0 +1,68 @@
+ <container>
+<header>
+    <h1>New Test Information</h1>
+    <div class="container newTestForm">
+ <div class="test">
+    <label for="testDate" class="col-form-label">Date Of Efficiency Test: </label>
+    <div class="">
+      <input type="date" class="form-control" id="testDate">
+    </div>
+  </div>
+  <br>
+  <div class="concepts">
+    <label for="conceptsTested" class="col-form-label">Concepts Tested: </label>
+    <div class="">
+      <input type="input" class="form-control" id="conceptsTested">
+    </div>
+  </div>
+  <br>
+  <div class="passed">
+    <label for="passed" class="col-form-label">Passed: </label>
+    <div class="">
+      <input type="input" class="form-control" id="passed">
+    </div>
+  </div>
+  <br>
+  <div class="todo">
+    <div class="offset-sm-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+           <p>To Do's: </p>
+          Study for test based on job description
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="offset-sm-2">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          Send Follow-Up Email
+        </label>
+      </div>
+    </div>
+  </div>
+  <br>
+  <p>Application Status</p>
+  
+<div class="select is-rounded">
+                        <select class=".is-arrowless" id="statusSel">
+                          <option>Select Application Status</option>
+                          <option value="Prep for Phone Interview">Prep for Phone Interview</option>
+                          <option value="Phone Interview Complete">Phone Interview Complete</option>
+                          <option value="Prep for Onsite Interview">Prep for Onsite Interview</option>
+                          <option value="Onsite Interview Complete">Onsite Interview Complete</option>
+                          <option value="Prep for Proficiency Test">Prep for Proficiency Test</option>
+                          <option value="Passed Proficiency Test">Passed Proficiency Test</option>
+                          <option value="Failed Proficiency Test">Failed Proficiency Test</option>
+                          <option value="Offer Received">Offer Received</option>
+                          <option value="Accepted Offer">Accepted Offer</option>
+                          <option value="Declined Offer">Declined Offer</option>
+                        </select>
+                    </div><br><br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </container>
+
+    <script src="./js/newTest.js"></script>
