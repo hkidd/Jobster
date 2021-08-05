@@ -137,7 +137,6 @@ router.get('/aboutus', (req, res) => {
       loggedIn: req.session.loggedIn
     });
 });
-
 // New job application route
 router.get('/newApp', (req, res) => {
     // create a new application
@@ -159,7 +158,6 @@ router.get('/newApp', (req, res) => {
       loggedIn: req.session.loggedIn
     });
 });
-
 // Edit application route
 router.get('/editApp', (req, res) => {
     res.render('editApp', {
