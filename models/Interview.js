@@ -21,10 +21,10 @@ Interview.init(
             type: DataTypes.DATE,
         },
         thank_you_note_sent: {
-            type: DataTypes.DATE,
+            type: DataTypes.BOOLEAN,
         },
         follow_up_email: {
-            type: DataTypes.DATE,
+            type: DataTypes.BOOLEAN,
         },
         application_id: {
             type: DataTypes.INTEGER,
