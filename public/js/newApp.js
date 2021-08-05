@@ -54,22 +54,27 @@ const newAppFormHandler = async (event) => {
     };
 
     // Using this template, need to grab the user input values from the application section of newApp
-    // const first_name = document.querySelector('#firstname-signup').value.trim();
+    const testDate = document.querySelector('#testDate').value.trim();
+    const conceptsTested = document.querySelector('#conceptsTested').value.trim();
+    const passed = document.querySelector('#passed').value.trim();
 
+    console.log(testDate);
+    console.log(conceptsTested); 
+    console.log(passed);
+
+    if (testDate && conceptsTested && passed) {
+      const response = await fetch('/api/users/test/', {
+        method: 'POST',
+        body: JSON.stringify({ testDate, conceptsTested, passed}),
+        headers: { 'Content-Type': 'application/json' },
+      });
   
-  //   if (first_name && last_name) {
-  //     const response = await fetch('/api/users/test', {
-  //       method: 'POST',
-  //       body: JSON.stringify({ first_name, last_name }),
-  //       headers: { 'Content-Type': 'application/json' },
-  //     });
-  
-  //     if (response.ok) {
-  //       document.location.replace('/');
-  //     } else {
-  //       alert('Failed to add new application.');
-  //     }
-  //   }
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to add new application.');
+      }
+    };
   };
 
   document

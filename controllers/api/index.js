@@ -4,7 +4,9 @@
 const router = require('express').Router();
 
 const userRoutes = require('./user-routes');
+const interviewRoutes = require('./interview-routes');
 
 router.use('/users', userRoutes);
+router.use('/interview-routes', interviewRoutes);
 
 module.exports = router;
