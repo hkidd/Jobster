@@ -10,7 +10,6 @@
 --border-radius: 0.3rem;
 }
 
-
 html {
 scroll-behavior: smooth;
 }
@@ -30,8 +29,8 @@ min-height: 100vh;
 justify-content: flex-start;
 background-color: var(--quatrinary);
 }
-  
-h1{
+
+h1  {
 font-family: 'Josefin Sans', sans-serif;
 }
 
