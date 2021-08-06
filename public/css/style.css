@@ -73,7 +73,6 @@ aside {
 nav {
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
-    background-color: 5fa8d3;
 }
 
 nav a {
@@ -122,6 +121,12 @@ img {
     margin: auto;
     text-align: center;
     border-radius: 10px;
+}
+
+.newAppForm{
+    background-color: ;
+    border-radius: 10px;
+    background-color:#ffe7af;
 }
 
 form {
