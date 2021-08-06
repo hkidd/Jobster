@@ -113,7 +113,7 @@ router.delete("/:id", withAuth, async(req, res) => {
     try {
         const applicationData = await Application.destroy({
             where: {
-                id: req.session.user,
+                id: req.params.id,
             },
         });
 

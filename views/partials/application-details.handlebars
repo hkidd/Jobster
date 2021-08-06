@@ -1,13 +1,13 @@
 {{!-- For each application, grab the appropriate info and insert into a card, list, accordion, etc to display on the page  --}}
 
-<div class="card">
+<div class="card" id = "application-card">
 <a href="/application/{{id}}"></a>
   <h5 class="card-header">{{company_name}}</h5>
   <div class="card-body">
     <h5 class="card-title">{{role}}</h5>
     <p class="card-text"><a href="{{job_url}}">{{job_url}}</a></p>
-    <a href="/editApp" class="btn btn-primary">Edit</a>
-    <a href="#" class="btn btn-primary">Delete</a>
+    <a href="#" class="btn btn-primary">Edit</a>
+    <button type="delete" value = {{id}} class="btn btn-primary delete">Delete</button>
   </div>
   <div class="card-footer text-muted">
     {{format_time submission_date}}
@@ -15,4 +15,3 @@
 </a>
 </div>
 
-{{!-- On card creation, set the value of the edit and delete to the application id --}}
