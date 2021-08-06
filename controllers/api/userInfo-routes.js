@@ -1,20 +1,23 @@
 const router = require("express").Router();
 const { User } = require("../../models");
-const withAuth = require("../utils/auth");
+// const withAuth = require("../utils/auth");
 
-router.get('/userinfo/:id', withAuth, async (req, res) => {
+router.get('/api/userInfo-routes/userInfo', async (req, res) => {
     try {
         const dbUserData = await User.findOne({
             where: {
-                user_id: req.session.user,
+                id: req.session.user,
             },
         })
-        res.status(200).json(dbUserData);
+        
+        console.log(dbUserData);
+
+        const userInfo = dbUserData.get({ plain: true });
 
         res.render("userInfo", {
-            first_name: dbUserData.first_name,
-            last_name: dbUserData.last_name,
-            
+            userInfo,
+            loggedIn: req.session.loggedIn,
+            user_id: req.session.user,
         });
 
     } catch (err) {

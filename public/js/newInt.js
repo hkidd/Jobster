@@ -3,15 +3,15 @@ const newIntFormHandler = async (event) => {
 
 // Using this template, need to grab the user input values from the interview section of newApp
 const interview_date = document.querySelector("#interviewDate").value;
-const thank_you_note_sent = document.querySelector("#sendThankYou").value;
-const follow_up_email = document.querySelector("#sendFollowUp").value;
+const thank_you_note_sent = document.querySelector("#sendThankYou").checked;
+const follow_up_email = document.querySelector("#sendFollowUp").checked;
 
 console.log(interview_date);
 console.log(thank_you_note_sent);
 console.log(follow_up_email);
 
-if (interview_date && thank_you_note_sent && follow_up_email) {
-  const responseInt = await fetch("/api/users/interview/", {
+if (interview_date || thank_you_note_sent || follow_up_email) {
+  const responseInt = await fetch("/api/interview-routes/interview/", {
     method: "POST",
     body: JSON.stringify({
       interview_date,

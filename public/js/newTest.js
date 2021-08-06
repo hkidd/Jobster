@@ -10,8 +10,8 @@ console.log(testDate);
 console.log(conceptsTested);
 console.log(passed);
 
-if (testDate && conceptsTested && passed) {
-  const responseTest = await fetch("/api/users/test/", {
+if (testDate || conceptsTested || passed) {
+  const responseTest = await fetch("/api/test-routes/test/", {
     method: "POST",
     body: JSON.stringify({ testDate, conceptsTested, passed }),
     headers: { "Content-Type": "application/json" },
