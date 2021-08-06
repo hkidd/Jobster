@@ -1,8 +1,8 @@
-<container>
+
 <header>
     <h1>New Job Application</h1>
 </header>
-<form class="newApp">
+<form class="newAppForm">
     <div class="newAppForm">
     <div class="company">
     <label for="inputCompany" class="col-form-label">Company: </label>
@@ -66,6 +66,7 @@
 <div class="select is-rounded">
   <select class=".is-arrowless" id="statusSel">
     <option>Select Application Status</option>
+    <option value="Application submitted, awaiting a response">Application submitted, await a response</option>
     <option value="Prep for Phone Interview">Prep for Phone Interview</option>
     <option value="Phone Interview Complete">Phone Interview Complete</option>
     <option value="Prep for Onsite Interview">Prep for Onsite Interview</option>
@@ -80,7 +81,6 @@
 </div>
   <br><br>
   <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</container>
+</form>
 
 <script src="./js/newApp.js"></script>
