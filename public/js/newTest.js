@@ -2,18 +2,18 @@ const newTestFormHandler = async (event) => {
     event.preventDefault();
 
 // Using this template, need to grab the user input values from the test section of newApp
-const testDate = document.querySelector("#testDate").value;
-const conceptsTested = document.querySelector("#conceptsTested").value.trim();
+const test_date = document.querySelector("#testDate").value;
+const concepts = document.querySelector("#conceptsTested").value.trim();
 const passed = document.querySelector("#passed").value.trim();
 
-console.log(testDate);
-console.log(conceptsTested);
+console.log(test_date);
+console.log(concepts);
 console.log(passed);
 
-if (testDate || conceptsTested || passed) {
-  const responseTest = await fetch("/api/test-routes/test/", {
+if (test_date || concepts || passed) {
+  const responseTest = await fetch("/api/test-routes/test", {
     method: "POST",
-    body: JSON.stringify({ testDate, conceptsTested, passed }),
+    body: JSON.stringify({ test_date, concepts, passed }),
     headers: { "Content-Type": "application/json" },
   });
 

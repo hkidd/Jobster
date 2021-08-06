@@ -21,7 +21,7 @@ Test.init(
             type: DataTypes.TEXT,
         },
         passed: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.TEXT,
         },
         application_id: {
             type: DataTypes.INTEGER,
