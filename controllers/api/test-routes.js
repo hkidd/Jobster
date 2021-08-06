@@ -28,6 +28,7 @@ router.post('/test', withAuth, async (req, res) => {
             test_date: req.body.test_date,
             concepts: req.body.concepts,
             passed: req.body.passed,
+            application_id: req.session.application_id,
         });
         // if the test is successfully created, the new response will be returned as json
         res.status(200).json(testData);
