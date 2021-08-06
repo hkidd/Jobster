@@ -4,7 +4,7 @@ const testData = [
     {
         test_date: 'July 15, 2021',
         concepts: 'JavaScript',
-        passed: true,
+        passed: 'Passed',
         application_id: 1,
     },
 ];
