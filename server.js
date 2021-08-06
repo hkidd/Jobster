@@ -86,24 +86,23 @@ const upload = multer({
 
 //Post Image
 app.post('/single', upload.single('image'), (req, res) => {
-  // console.log(req.file);
+  console.log('Single Route');
   const savedImage = req.file;
+  console.log(savedImage);
   const imageLocation = savedImage.path;
-  // console.log(savedImage);
+  console.log(imageLocation);
 
   cloudinary.uploader.upload(imageLocation, { tags: "avatar" }).then(data => {
-    // console.dir(data);
-    // console.log(data);
-
+    console.log(data.url);
     if (data.url) {
       User.update({
-        image_url: imageLocation
+        image_url: data.url
       },
-      {
-        where: {
-          first_name: 'John'
-        }
-      })
+        {
+          where: {
+            first_name: 'Carlos'
+          }
+        })
         .then((newUserProfilePic) => {
           res.json(newUserProfilePic);
         })

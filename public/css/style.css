@@ -268,3 +268,8 @@ h1 {
     align-content: flex-start;
     align-items: center;
 }
+
+#profilePicture{
+    height: 250px;
+    /* width: 250px; */
+}
