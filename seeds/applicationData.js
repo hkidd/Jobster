@@ -8,6 +8,8 @@ const applicationData = [
         submission_date: 'July 15, 2021',
         date_found: 'July 15, 2021',
         application_status: 'Application submitted',
+        research_company: 1,
+        follow_up_email: 0,
         user_id: 1
     },
     {
@@ -17,6 +19,8 @@ const applicationData = [
         submission_date: 'July 15, 2021',
         date_found: 'July 15, 2021',
         application_status: 'Prep for phone interview',
+        research_company: 1,
+        follow_up_email: 0,
         user_id: 1
     },
 ];
