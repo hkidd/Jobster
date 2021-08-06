@@ -21,6 +21,12 @@ Test.init(
             type: DataTypes.TEXT,
         },
         passed: {
+            type: DataTypes.TEXT,
+        },
+        study_for_test: {
+            type: DataTypes.BOOLEAN,
+        },
+        follow_up_email: {
             type: DataTypes.BOOLEAN,
         },
         application_id: {

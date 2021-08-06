@@ -35,6 +35,12 @@ Application.init(
         application_status: {
             type: DataTypes.STRING,
         },
+        research_company: {
+            type: DataTypes.BOOLEAN,
+        },
+        follow_up_email: {
+            type: DataTypes.BOOLEAN,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
