@@ -55,9 +55,8 @@ router.post("/interview/", withAuth, async(req, res) => {
 });
 
 
-// PUT
-router.put('/interview/:id', withAuth, async (req, res) => {
-    // Update an interview by id
+// PUT, Update an interview by id
+router.put('/interview/', withAuth, async (req, res) => {
     try {
         const interviewData = await Interview.update({
             interview_date: req.body.interview_date,
@@ -65,7 +64,7 @@ router.put('/interview/:id', withAuth, async (req, res) => {
             follow_up_email: req.body.follow_up_email,
         }, {
             where: {
-                id: req.params.id,
+                id: req.session.applicationId,
             },
         });
         // if the interview is successfully updated, the response will be returned as json
@@ -77,12 +76,12 @@ router.put('/interview/:id', withAuth, async (req, res) => {
 
 
 // DELETE
-router.delete('/interview/:id', withAuth, async (req, res) => {
+router.delete('/interview/', withAuth, async (req, res) => {
     // delete a interview by its `id` value
     try {
         const interviewData = await Interview.destroy({
             where: {
-                id: req.params.id,
+                id: req.session.id,
             },
         });
 

@@ -95,7 +95,19 @@ nav a:hover {
     text-decoration: none;
     font-size: 100%;
     transition: color 0.1s;
-    margin-left: 16px;
+    color: var(--secondary)
+}
+
+.logout-btn {
+    color: var(--secondary);
+    padding: 14px 20px;
+    text-align: center;
+    background-color: var(--quatrinary);
+}
+
+.logout-btn:hover {
+    color: var(--secondary);
+    background-color: var(--dark);
 }
 
 img {

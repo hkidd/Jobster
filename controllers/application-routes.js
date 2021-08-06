@@ -180,14 +180,6 @@ router.get("/newTest", (req, res) => {
     });
 });
 
-// User Info route
-// router.get("/userInfo", (req, res) => {
-//     res.render("userInfo", {
-//         loggedIn: req.session.loggedIn,
-//         user_id: req.session.user
-//     });
-// });
-
 // New interview route (part of application)
 router.get("/newInt", (req, res) => {
   res.render("newInt", {
