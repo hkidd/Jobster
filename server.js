@@ -52,6 +52,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 
+
+
+
+
 //Multer Storage Specifications
 const fileStorageEngine = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -64,13 +68,13 @@ const fileStorageEngine = multer.diskStorage({
 
 
 
+
 //Multer Filter
 const upload = multer({
   storage: fileStorageEngine,
   fileFilter: function (req, file, cb) {
     //Allowed ext
-    const filetypes = /jpg|jpeg|png|gif/
-    // const filetypes = /pdf/
+    const filetypes = /jpg|jpeg|png|gif|pdf/
     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
     const mimetype = filetypes.test(file.mimetype);
 
@@ -84,7 +88,78 @@ const upload = multer({
 
 
 
-//Post Image
+
+
+//Post Profile Picture
+app.post('/single', upload.single('image'), (req, res) => {
+  console.log('Single Route');
+  const savedImage = req.file;
+  console.log(savedImage);
+  const imageLocation = savedImage.path;
+  console.log(imageLocation);
+
+  cloudinary.uploader.upload(imageLocation, { tags: "avatar" }).then(data => {
+    console.log(data.url);
+    if (data.url) {
+      User.update({
+        image_url: data.url
+      },
+        {
+          where: {
+            id: req.session.user
+          }
+        })
+        .then((newUserProfilePic) => {
+          res.json(newUserProfilePic);
+        })
+        .catch((err) => {
+          res.json(err);
+        });
+    }
+    fs.unlink(imageLocation, (error) => error ? console.log(error) : null)
+  });
+
+
+  // res.send(`${savedImage} Single File Upload Success`);
+});
+
+
+
+//Post Resume
+app.post('/resume', upload.single('resume'), (req, res) => {
+  console.log('Single Route');
+  const savedResume = req.file;
+  console.log(savedResume);
+  const resumeLocation = savedResume.path;
+  console.log(resumeLocation);
+
+  cloudinary.uploader.upload(resumeLocation, { tags: "resume" }).then(data => {
+    console.log(data.url);
+    if (data.url) {
+      User.update({
+        resume_url: data.url
+      },
+        {
+          where: {
+            first_name: 'Carlos'
+          }
+        })
+        .then((newUserProfilePic) => {
+          res.json(newUserProfilePic);
+        })
+        .catch((err) => {
+          res.json(err);
+        });
+    }
+    fs.unlink(imageLocation, (error) => error ? console.log(error) : null)
+  });
+
+
+  res.send(`Single File Upload Success`);
+});
+
+
+//Post Cover Letters
 app.post('/single', upload.single('image'), (req, res) => {
   console.log('Single Route');
   const savedImage = req.file;
@@ -116,6 +191,47 @@ app.post('/single', upload.single('image'), (req, res) => {
 
   // res.send(`${savedImage} Single File Upload Success`);
 });
+
+
+
+
+//Post Thank You Notes
+app.post('/single', upload.single('image'), (req, res) => {
+  console.log('Single Route');
+  const savedImage = req.file;
+  console.log(savedImage);
+  const imageLocation = savedImage.path;
+  console.log(imageLocation);
+
+  cloudinary.uploader.upload(imageLocation, { tags: "avatar" }).then(data => {
+    console.log(data.url);
+    if (data.url) {
+      User.update({
+        image_url: data.url
+      },
+        {
+          where: {
+            first_name: 'Carlos'
+          }
+        })
+        .then((newUserProfilePic) => {
+          res.json(newUserProfilePic);
+        })
+        .catch((err) => {
+          res.json(err);
+        });
+    }
+    fs.unlink(imageLocation, (error) => error ? console.log(error) : null)
+  });
+
+
+  // res.send(`${savedImage} Single File Upload Success`);
+});
+
+
+
+
+
 
 
 
