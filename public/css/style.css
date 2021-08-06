@@ -142,16 +142,25 @@ text-align: center;
 align-items: center;
 margin: auto;
 flex: 0 1 300px;
-border: 7px double var(--dark);
+border: 7px;
 border-radius: 10px;
-background-image: url("./images/office.jpeg");
-background-color: cornflowerblue;
+background: rgb(96, 103, 247);
+background: linear-gradient(270deg, rgba(96, 103, 247, 1) 17%, rgba(0, 53, 102, 1) 85%);
 color: var(--dark);
 padding-top: 10px;
 max-width: 80%;
 max-height: 80%;
 margin-top: 10px;
 margin-bottom: 10px;
+box-shadow: 5px 5px 2px 2px rgba(0, 0, 255, .2);
+}
+
+.track{
+    color: white;
+}
+
+.logo{
+    border-radius: 30px;
 }
 
 .login-card {
@@ -170,7 +179,9 @@ margin-bottom: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
+.features-head{
+    border-radius: 5px;
+}
 .features-card {
     align-items: center;
     text-align: center;
