@@ -11,7 +11,7 @@ const newAppFormHandler = async (event) => {
   const submission_date = document.querySelector("#dateApplied").value;
   const application_status = document.querySelector("#statusSel").value;
 
-  if (company_name && job_url && date_found && role && submission_date) {
+  if (company_name || job_url || date_found || role || submission_date) {
     const responseApp = await fetch("/", {
       method: "POST",
       body: JSON.stringify({
