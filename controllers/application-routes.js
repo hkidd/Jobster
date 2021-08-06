@@ -113,7 +113,7 @@ router.delete("/:id", withAuth, async(req, res) => {
     try {
         const applicationData = await Application.destroy({
             where: {
-                id: req.session.user,
+                id: req.params.id,
             },
         });
 
@@ -179,14 +179,6 @@ router.get("/newTest", (req, res) => {
         user_id: req.session.user
     });
 });
-
-// User Info route
-// router.get("/userInfo", (req, res) => {
-//     res.render("userInfo", {
-//         loggedIn: req.session.loggedIn,
-//         user_id: req.session.user
-//     });
-// });
 
 // New interview route (part of application)
 router.get("/newInt", (req, res) => {
