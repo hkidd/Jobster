@@ -2,7 +2,8 @@
 const handleAppDelete = async (event) => {
         event.preventDefault();
 
-    const applicationId = document.querySelector("#delete").value;
+    const applicationId = event.target.value;
+    console.log(applicationId);
 
     if (applicationId) {
         const responseApp = await fetch(`/${applicationId}`, {
@@ -20,5 +21,6 @@ const handleAppDelete = async (event) => {
         }
 };
 
-let deleteBtn = document.querySelector("#delete");
-deleteBtn.addEventListener("click", handleAppDelete);
+document.querySelectorAll(".delete").forEach(btn =>{
+    btn.addEventListener("click", handleAppDelete)
+});
