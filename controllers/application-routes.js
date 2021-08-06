@@ -69,6 +69,8 @@ router.post("/", withAuth, async (req, res) => {
       submission_date: req.body.submission_date,
       date_found: req.body.date_found,
       application_status: req.body.application_status,
+      research_company: req.body.research_company,
+      follow_up_email: req.body.follow_up_email,
       user_id: req.session.user
     });
 

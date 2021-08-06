@@ -10,8 +10,10 @@ const newAppFormHandler = async (event) => {
   const role = document.querySelector("#role").value.trim();
   const submission_date = document.querySelector("#dateApplied").value;
   const application_status = document.querySelector("#statusSel").value;
+  const research_company = document.querySelector("#researchCompany").checked;
+  const follow_up_email = document.querySelector("#sendFollowUp").checked;
 
-  if (company_name || job_url || date_found || role || submission_date) {
+  if (company_name || job_url || date_found || role || submission_date || research_company || follow_up_email) {
     const responseApp = await fetch("/", {
       method: "POST",
       body: JSON.stringify({
@@ -21,6 +23,8 @@ const newAppFormHandler = async (event) => {
         role,
         submission_date,
         application_status,
+        research_company,
+        follow_up_email
       }),
       headers: { "Content-Type": "application/json" },
     });
