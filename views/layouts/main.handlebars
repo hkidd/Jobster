@@ -26,12 +26,13 @@
 
 <body>
   <header>
-    <h1>Welcome to Jobster!</h1>
-    <h2>Where we take you from <em>unemployed</em> to <em>I'm employed</em> !</h2>
+    <h1>Jobster</h1>
+    <h3>Where we take you from <em>unemployed</em> to <em>I'm employed</em> !</h3>
   </header>
   <nav>
     <a href="/">Home</a>
     {{#if loggedIn}}
+    <a href="/userInfo">User Info</a>
     <a href="/newApp">Create New Application</a>
     <a href="/userInfo">User Info</a>
     <button id="logout" class="btn">Logout</button>

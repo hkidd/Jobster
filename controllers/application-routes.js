@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Application, Interview, Test } = require("../models");
+const { User, Application, Interview, Test } = require("../models");
 // Import the custom middleware
 const withAuth = require("../utils/auth");
 
@@ -58,24 +58,31 @@ router.get("/", withAuth, async(req, res) => {
     }
 });
 
-router.post("/", withAuth, async(req, res) => {
-    // create a new application
-    console.log("post route");
-    try {
-        const applicationData = await Application.create({
-            company_name: req.body.company_name,
-            role: req.body.role,
-            job_url: req.body.job_url,
-            submission_date: req.body.submission_date,
-            date_found: req.body.date_found,
-            application_status: req.body.application_status,
-            user_id: req.session.user
-        });
-        // if the application is successfully created, the new response will be returned as json
-        res.status(200).json(applicationData);
-    } catch (err) {
-        res.status(400).json(err);
-    }
+router.post("/", withAuth, async (req, res) => {
+  // create a new application
+  console.log("post route");
+  try {
+    const applicationData = await Application.create({
+      company_name: req.body.company_name,
+      role: req.body.role,
+      job_url: req.body.job_url,
+      submission_date: req.body.submission_date,
+      date_found: req.body.date_found,
+      application_status: req.body.application_status,
+      user_id: req.session.user
+    });
+
+    console.log(applicationData.dataValues.id);
+
+    req.session.save(() => {
+      req.session.applicationId = applicationData.dataValues.id;
+    
+    // if the application is successfully created, the new response will be returned as json
+    res.status(200).json(applicationData);
+  });
+ } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 router.put("/:id", withAuth, async(req, res) => {
@@ -170,12 +177,52 @@ router.get("/newTest", (req, res) => {
         user_id: req.session.user
     });
 });
+
 // User Info route
-router.get("/userInfo", (req, res) => {
-    res.render("userInfo", {
-        loggedIn: req.session.loggedIn,
-        user_id: req.session.user
-    });
+// router.get("/userInfo", (req, res) => {
+//     res.render("userInfo", {
+//         loggedIn: req.session.loggedIn,
+//         user_id: req.session.user
+//     });
+// });
+
+// New interview route (part of application)
+router.get("/newInt", (req, res) => {
+  res.render("newInt", {
+    loggedIn: req.session.loggedIn,
+    user_id: req.session.user
+  });
+});
+// New test route (part of application)
+router.get("/newTest", (req, res) => {
+  res.render("newTest", {
+    loggedIn: req.session.loggedIn,
+    user_id: req.session.user
+  });
+});
+
+router.get('/userInfo', async (req, res) => {
+    try {
+        const dbUserData = await User.findOne({
+            where: {
+                id: req.session.user,
+            },
+        })
+        
+        console.log(dbUserData);
+        
+
+        const userInfo = dbUserData.get({ plain: true });
+
+        res.render("userInfo", {
+            userInfo,
+            loggedIn: req.session.loggedIn,
+            user_id: req.session.user,
+        });
+
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
 module.exports = router;
