@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Application, Interview, Test } = require("../models");
+const { User, Application, Interview, Test } = require("../models");
 // Import the custom middleware
 const withAuth = require("../utils/auth");
 
@@ -177,13 +177,15 @@ router.get("/newTest", (req, res) => {
         user_id: req.session.user
     });
 });
+
 // User Info route
-router.get("/userInfo", (req, res) => {
-    res.render("userInfo", {
-        loggedIn: req.session.loggedIn,
-        user_id: req.session.user
-    });
-});
+// router.get("/userInfo", (req, res) => {
+//     res.render("userInfo", {
+//         loggedIn: req.session.loggedIn,
+//         user_id: req.session.user
+//     });
+// });
+
 // New interview route (part of application)
 router.get("/newInt", (req, res) => {
   res.render("newInt", {
@@ -197,6 +199,30 @@ router.get("/newTest", (req, res) => {
     loggedIn: req.session.loggedIn,
     user_id: req.session.user
   });
+});
+
+router.get('/userInfo', async (req, res) => {
+    try {
+        const dbUserData = await User.findOne({
+            where: {
+                id: req.session.user,
+            },
+        })
+        
+        console.log(dbUserData);
+        
+
+        const userInfo = dbUserData.get({ plain: true });
+
+        res.render("userInfo", {
+            userInfo,
+            loggedIn: req.session.loggedIn,
+            user_id: req.session.user,
+        });
+
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
 module.exports = router;
