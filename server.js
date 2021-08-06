@@ -125,6 +125,8 @@ app.post('/single', upload.single('image'), (req, res) => {
 
 
 
+
+
 //Post Resume
 app.post('/resume', upload.single('resume'), (req, res) => {
   console.log('Single Route');
@@ -133,11 +135,30 @@ app.post('/resume', upload.single('resume'), (req, res) => {
   const resumeLocation = savedResume.path;
   console.log(resumeLocation);
 
+  
+  // cloudinary.v2.api.resource('sample_pdf', 
+  // { pages: true },
+  // function(error, result) {console.log(result, error); });
+
+  
+  
   cloudinary.uploader.upload(resumeLocation, { tags: "resume" }).then(data => {
+    console.log(data);
     console.log(data.url);
-    if (data.url) {
+    
+    // Transform .pdf to renderable jpeg
+    console.log("-----------------PDF TRANSORMATION-------------------");
+    let originalURL = data.url;
+    console.log(originalURL);
+    let splitURL = originalURL.split('.pdf');
+    console.log(splitURL);
+    let finalURL = splitURL[0] + ".jpeg";
+    console.log(finalURL);    
+
+
+    if (finalURL) {
       User.update({
-        resume_url: data.url
+        resume_url: finalURL
       },
         {
           where: {
@@ -150,12 +171,12 @@ app.post('/resume', upload.single('resume'), (req, res) => {
         .catch((err) => {
           res.json(err);
         });
-    }
-    fs.unlink(imageLocation, (error) => error ? console.log(error) : null)
+      }
+      fs.unlink(resumeLocation, (error) => error ? console.log(error) : null)
   });
 
-
-  res.send(`Single File Upload Success`);
+  
+  // res.send(`Single File Upload Success`);
 });
 
 
