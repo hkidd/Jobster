@@ -69,6 +69,23 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// Update user image
+// router.put("/updateimg", async(req, res) => {
+//   try {
+//       const userData = await User.update({
+//           img_url: req.body.img_url,
+//       }, {
+//           where: {
+//               id: req.session.user,
+//           },
+//       });
+//       // if the update is successful, the response will be returned as json
+//       res.status(200).json(userData);
+//   } catch (err) {
+//       res.status(500).json(err);
+//   }
+// });
+
 // Logout
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {

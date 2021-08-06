@@ -30,13 +30,13 @@
     <h3>Where we take you from <em>unemployed</em> to <em>I'm employed</em> !</h3>
   </header>
   <nav>
-    <a href="/">Home</a>
+    <a href="/aboutus">Home</a>
     {{#if loggedIn}}
+    <a href="/">Summary</a>
     <a href="/userInfo">User Info</a>
     <a href="/newApp">Create New Application</a>
     <button id="logout" class="btn">Logout</button>
     {{else}}
-    <a href="/aboutus">About Us</a>
     <a href="/login">Login</a>
     <a href="/signup">Sign Up</a>
     {{/if}}
@@ -54,6 +54,5 @@
 
   <script src="./js/deleteApp.js"></script>
 </body>
-
 
 </html> 
