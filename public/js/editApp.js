@@ -1,7 +1,7 @@
 const handleAppEdit = async (event) => {
   event.preventDefault();
 
-  const applicationId = event.target.value;
+  const applicationId = document.querySelector(".submit").value;
   console.log(applicationId);
 
   const application_status = document.querySelector("#statusSel").value;
@@ -29,9 +29,7 @@ const handleAppEdit = async (event) => {
 //   .querySelectorAll(".editAppForm")
 //   .addEventListener("submit", handleAppEdit);
 
-document.querySelectorAll(".submit").forEach((btn) => {
-  btn.addEventListener("click", handleAppEdit);
-});
-
+document.querySelector(".editAppForm")
+.addEventListener("submit", handleAppEdit);
 
 // /editInt/${applicationId}
