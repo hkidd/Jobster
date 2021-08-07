@@ -105,17 +105,24 @@ router.post("/", withAuth, async (req, res) => {
 router.put(`/changeAppStatus/:id`, withAuth, async (req, res) => {
   // Update an application by id
   console.log(req.params.id);
+  console.log(req.body.application_status);
 
   try {
-    const applicationData = await Application.update({
-      application_status: req.body.application_status, 
+    const applicationData = await Application.update(
+      {
+        application_status: req.body.application_status,
+      },
+      {
         where: {
           id: req.params.id,
         },
       }
     );
-    // if the application is successfully updated, the response will be returned as json
-    res.status(200).json(applicationData);
+
+    req.session.save(() => {
+      // if the application is successfully updated, the response will be returned as json
+      res.status(200).json(applicationData);
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -140,8 +147,6 @@ router.delete("/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
 
 // Login route
 router.get("/login", (req, res) => {
