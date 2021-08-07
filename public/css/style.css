@@ -311,3 +311,9 @@ h1 {
     align-items: center;
 }
 
+/* Centers text/inputs for the edit cards */
+.editAppForm,
+.editIntForm,
+.editTestForm {
+    align-content: center;
+}
