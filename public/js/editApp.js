@@ -8,25 +8,30 @@ const handleAppEdit = async (event) => {
 
   console.log(application_status);
 
-  // if (application_status) {
-  //   const responseApp = await fetch(`/changeAppStatus/${applicationId}`, {
-  //     method: "PUT",
-  //     body: JSON.stringify({
-  //       application_status: application_status,
-  //     }),
-  //     headers: { "Content-Type": "application/json" },
-  //   });
+  if (application_status) {
+    const responseApp = await fetch(`/changeAppStatus/${applicationId}`, {
+      method: "PUT",
+      body: JSON.stringify({
+        application_status: application_status,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
 
-  //   if (responseApp.ok) {
-  //     document.location.replace("/");
-  //   } else {
-  //     alert("Failed to edit application status.");
-  //   }
-  // }
+    if (responseApp.ok) {
+      document.location.replace("/");
+    } else {
+      alert("Failed to edit application status.");
+    }
+  }
 };
 
-document
-  .querySelector(".editAppForm")
-  .addEventListener("submit", handleAppEdit);
+// document
+//   .querySelectorAll(".editAppForm")
+//   .addEventListener("submit", handleAppEdit);
+
+document.querySelectorAll(".submit").forEach((btn) => {
+  btn.addEventListener("click", handleAppEdit);
+});
+
 
 // /editInt/${applicationId}
