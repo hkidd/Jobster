@@ -52,10 +52,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 
-
-
-
-
 //Multer Storage Specifications
 const fileStorageEngine = multer.diskStorage({
   destination: (req, file, cb) => {
