@@ -321,3 +321,9 @@ h1 {
 .delete {
     margin-bottom: 5px;
 }
+
+.btn.btn-primary.editSubmit {
+    background-color: #ffd166;
+    color: #003566;
+    font-weight: bold;
+}
