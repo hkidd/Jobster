@@ -1,26 +1,20 @@
-
-<h1>{{userInfo.first_name}} {{userInfo.last_name}}'s Profile</h1>
-
-
-{{!-- Connect Multer for uploads --}}
-
-<h1>User Profile</h1>
-
 <container class="userInfo">
-  <img src={{userInfo.image_url}} class="img-thumbnail" id="profilePicture" alt="User Profile Picture">
-
-  <br><br><br>
-
-
-  {{!-- Profile Picture Upload --}}
+  <div class="user-profile-card">
+    <h2>{{userInfo.first_name}} {{userInfo.last_name}}'s Profile</h2>
+    <img src={{userInfo.image_url}} class="img-thumbnail profile-pic" id="profilePicture" alt="User Profile Picture">
+   {{!-- Profile Picture Upload --}}
   <div class="mb-3">
     <form action="/single" method="POST" enctype="multipart/form-data">
       <input type="file" name='image' />
       <button type="submit">Submit</button>
     </form>
   </div>
+  </div>
+<br>
+<br>
+<br>
 
-  {{!-- Resume Upload --}}
+{{!-- Resume Upload --}}
   <div class="mb-3">
     <form action="/resume" method="POST" enctype="multipart/form-data">
       <input type="file" name='resume' />
@@ -28,25 +22,13 @@
     </form>
     <img src={{userInfo.resume_url}} class="img-thumbnail" id="profilePicture" alt="Resume Image">
   </div>
-
-
   {{!-- Cover Letter Upload --}}
   <div class="mb-3">
-    <form action="/single" method="POST" enctype="multipart/form-data">
-      <input type="file" name='image' />
+    <form action="/coverLetter" method="POST" enctype="multipart/form-data">
+      <input type="file" name='coverLetter' />
       <button type="submit">Submit</button>
     </form>
     <img src={{userInfo.coverletter_url}} class="img-thumbnail" id="profilePicture" alt="Cover Letter Image">
-  </div>
-
-
-  {{!-- User Info Upload --}}
-  <div class="mb-3">
-    <form action="/single" method="POST" enctype="multipart/form-data">
-      <input type="file" name='image' />
-      <button type="submit">Submit</button>
-    </form>
-    <img src={{userInfo.thankyounote_url}} class="img-thumbnail" id="profilePicture" alt="Thank You Image">
   </div>
 
 </container>
