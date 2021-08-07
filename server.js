@@ -52,6 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 
+
 //Multer Storage Specifications
 const fileStorageEngine = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -61,7 +62,6 @@ const fileStorageEngine = multer.diskStorage({
     cb(null, Date.now() + "--" + file.originalname)
   }
 });
-
 
 
 
@@ -84,8 +84,6 @@ const upload = multer({
 
 
 
-
-
 //Post Profile Picture
 app.post('/single', upload.single('image'), (req, res) => {
   console.log('Single Route');
@@ -94,7 +92,7 @@ app.post('/single', upload.single('image'), (req, res) => {
   const imageLocation = savedImage.path;
   console.log(imageLocation);
 
-  cloudinary.uploader.upload(imageLocation, { tags: "avatar" }).then(data => {
+  cloudinary.uploader.upload(imageLocation, { tags: "Profile Picture" }).then(data => {
     console.log(data.url);
     if (data.url) {
       User.update({
@@ -122,7 +120,6 @@ app.post('/single', upload.single('image'), (req, res) => {
 
 
 
-
 //Post Resume
 app.post('/resume', upload.single('resume'), (req, res) => {
   console.log('Single Route');
@@ -131,17 +128,11 @@ app.post('/resume', upload.single('resume'), (req, res) => {
   const resumeLocation = savedResume.path;
   console.log(resumeLocation);
 
-  
-  // cloudinary.v2.api.resource('sample_pdf', 
-  // { pages: true },
-  // function(error, result) {console.log(result, error); });
 
-  
-  
-  cloudinary.uploader.upload(resumeLocation, { tags: "resume" }).then(data => {
+  cloudinary.uploader.upload(resumeLocation, { tags: "Resume" }).then(data => {
     console.log(data);
     console.log(data.url);
-    
+
     // Transform .pdf to renderable jpeg
     console.log("-----------------PDF TRANSORMATION-------------------");
     let originalURL = data.url;
@@ -149,7 +140,7 @@ app.post('/resume', upload.single('resume'), (req, res) => {
     let splitURL = originalURL.split('.pdf');
     console.log(splitURL);
     let finalURL = splitURL[0] + ".jpeg";
-    console.log(finalURL);    
+    console.log(finalURL);
 
 
     if (finalURL) {
@@ -158,7 +149,7 @@ app.post('/resume', upload.single('resume'), (req, res) => {
       },
         {
           where: {
-            first_name: 'Carlos'
+            id: req.session.user
           }
         })
         .then((newUserProfilePic) => {
@@ -167,86 +158,59 @@ app.post('/resume', upload.single('resume'), (req, res) => {
         .catch((err) => {
           res.json(err);
         });
-      }
-      fs.unlink(resumeLocation, (error) => error ? console.log(error) : null)
+    }
+    fs.unlink(resumeLocation, (error) => error ? console.log(error) : null)
   });
 
-  
+
   // res.send(`Single File Upload Success`);
 });
 
 
+
+
 //Post Cover Letters
-app.post('/single', upload.single('image'), (req, res) => {
-  console.log('Single Route');
-  const savedImage = req.file;
-  console.log(savedImage);
-  const imageLocation = savedImage.path;
-  console.log(imageLocation);
+app.post('/coverLetter', upload.single('coverLetter'), (req, res) => {
+  const savedCoverLetter = req.file;
+  console.log(savedCoverLetter);
+  const coverLetterLocation = savedCoverLetter.path;
+  console.log(coverLetterLocation);
 
-  cloudinary.uploader.upload(imageLocation, { tags: "avatar" }).then(data => {
+  cloudinary.uploader.upload(coverLetterLocation, { tags: "Cover-Letter" }).then(data => {
     console.log(data.url);
-    if (data.url) {
+
+    // Transform .pdf to renderable jpeg
+    console.log("-----------------PDF TRANSORMATION-------------------");
+    let originalURL = data.url;
+    console.log(originalURL);
+    let splitURL = originalURL.split('.pdf');
+    console.log(splitURL);
+    let finalURL = splitURL[0] + ".jpeg";
+    console.log(finalURL);
+
+
+    if (finalURL) {
       User.update({
-        image_url: data.url
+        coverletter_url: finalURL
       },
         {
           where: {
-            first_name: 'Carlos'
+            id: req.session.user
           }
         })
-        .then((newUserProfilePic) => {
-          res.json(newUserProfilePic);
+        .then((newCoverLetter) => {
+          res.json(newCoverLetter);
         })
         .catch((err) => {
           res.json(err);
         });
     }
-    fs.unlink(imageLocation, (error) => error ? console.log(error) : null)
+    fs.unlink(coverLetterLocation, (error) => error ? console.log(error) : null)
   });
 
 
   // res.send(`${savedImage} Single File Upload Success`);
 });
-
-
-
-
-//Post Thank You Notes
-app.post('/single', upload.single('image'), (req, res) => {
-  console.log('Single Route');
-  const savedImage = req.file;
-  console.log(savedImage);
-  const imageLocation = savedImage.path;
-  console.log(imageLocation);
-
-  cloudinary.uploader.upload(imageLocation, { tags: "avatar" }).then(data => {
-    console.log(data.url);
-    if (data.url) {
-      User.update({
-        image_url: data.url
-      },
-        {
-          where: {
-            first_name: 'Carlos'
-          }
-        })
-        .then((newUserProfilePic) => {
-          res.json(newUserProfilePic);
-        })
-        .catch((err) => {
-          res.json(err);
-        });
-    }
-    fs.unlink(imageLocation, (error) => error ? console.log(error) : null)
-  });
-
-
-  // res.send(`${savedImage} Single File Upload Success`);
-});
-
-
-
 
 
 

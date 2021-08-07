@@ -32,22 +32,13 @@
 
   {{!-- Cover Letter Upload --}}
   <div class="mb-3">
-    <form action="/single" method="POST" enctype="multipart/form-data">
-      <input type="file" name='image' />
+    <form action="/coverLetter" method="POST" enctype="multipart/form-data">
+      <input type="file" name='coverLetter' />
       <button type="submit">Submit</button>
     </form>
     <img src={{userInfo.coverletter_url}} class="img-thumbnail" id="profilePicture" alt="Cover Letter Image">
   </div>
 
-
-  {{!-- User Info Upload --}}
-  <div class="mb-3">
-    <form action="/single" method="POST" enctype="multipart/form-data">
-      <input type="file" name='image' />
-      <button type="submit">Submit</button>
-    </form>
-    <img src={{userInfo.thankyounote_url}} class="img-thumbnail" id="profilePicture" alt="Thank You Image">
-  </div>
 
 </container>
 
