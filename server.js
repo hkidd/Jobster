@@ -161,8 +161,6 @@ app.post('/resume', upload.single('resume'), (req, res) => {
     }
     fs.unlink(resumeLocation, (error) => error ? console.log(error) : null)
   });
-
-
   // res.send(`Single File Upload Success`);
 });
 
@@ -207,8 +205,6 @@ app.post('/coverLetter', upload.single('coverLetter'), (req, res) => {
     }
     fs.unlink(coverLetterLocation, (error) => error ? console.log(error) : null)
   });
-
-
   // res.send(`${savedImage} Single File Upload Success`);
 });
 

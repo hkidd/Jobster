@@ -1,7 +1,9 @@
-const editTestFormHandler = async (event) => {
+const handleTestEdit = async (event) => {
   event.preventDefault();
 
-  // Using this template, need to grab the user input values from the test section of newApp
+  const testId = document.querySelector("#submitTest").value;
+  console.log(testId);
+
   const test_date = document.querySelector("#testDate").value;
   const concepts = document.querySelector("#conceptsTested").value.trim();
   const passed = document.querySelector("#passed").value.trim();
@@ -11,13 +13,20 @@ const editTestFormHandler = async (event) => {
   console.log(passed);
 
   if (test_date || concepts || passed) {
-    const responseTest = await fetch("/api/test-routes/test", {
-      method: "PUT",
-      body: JSON.stringify({ test_date, concepts, passed }),
-      headers: { "Content-Type": "application/json" },
-    });
+    const responseApp = await fetch(
+      `/api/interview-routes/editIntInfo/${testId}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({
+          passed: passed,
+          concepts: concepts,
+          passed: passed,
+        }),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
 
-    if (responseTest.ok) {
+    if (responseApp.ok) {
       document.location.replace("/");
     } else {
       alert("Failed to edit test.");
@@ -25,6 +34,4 @@ const editTestFormHandler = async (event) => {
   }
 };
 
-document
-  .querySelector(".editTestForm")
-  .addEventListener("submit", editTestFormHandler);
+document.querySelector("#submitTest").addEventListener("click", handleTestEdit);

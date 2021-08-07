@@ -25,11 +25,6 @@ const handleAppEdit = async (event) => {
   }
 };
 
-// document
-//   .querySelectorAll(".editAppForm")
-//   .addEventListener("submit", handleAppEdit);
-
-document.querySelector(".editAppForm")
-.addEventListener("submit", handleAppEdit);
-
-// /editInt/${applicationId}
+document
+  .querySelector(".editAppForm")
+  .addEventListener("submit", handleAppEdit);

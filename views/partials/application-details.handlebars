@@ -8,7 +8,6 @@
     <p class="card-text"><a href="{{job_url}}">{{job_url}}</a></p>
     <h5 class="card-title">Application Status</h5>
     <p class="card-text">{{application_status}}</p>
-      {{!-- <br> --}}
       {{!-- Interview Date --}}
       <h5 class="card-title">Interview Date</h5>
       <p class="card-text">{{format_date interviews.[0].interview_date}}</p>
@@ -23,7 +22,6 @@
       {{else}}
       <p class="card-text">Follow up email has not been sent!</p>
       {{/if}}
-      {{!-- <br> --}}
       {{!-- Test Info --}}
       <h5 class="card-title">Test Date</h5>
       <p class="card-text">{{format_date test.test_date}}</p>
@@ -34,8 +32,9 @@
       {{else}}
       <p class="card-text"></p>
       {{/if}}
-       {{!-- <br> --}}
-    <button type="edit" value = {{id}} class="btn btn-primary edit">Edit</button>
+    <button type="edit" value = {{id}} class="btn btn-primary editApp">Edit App</button>
+    <button type="edit" value = {{id}} class="btn btn-primary editInt">Edit Int</button>
+    <button type="edit" value = {{id}} class="btn btn-primary editTest">Edit Test</button>
   </div>
     <button type="delete" value = {{id}} class="btn btn-primary delete">Delete</button>
   <div class="card-footer text-muted">

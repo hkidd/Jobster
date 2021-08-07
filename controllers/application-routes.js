@@ -58,25 +58,6 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-// router.get("/application/:id", async (req, res) => {
-//   // If the user is logged in, allow them to update a application
-//   try {
-//     const dbApplicationData = await Application.findByPk(req.params.id);
-//     console.log(dbApplicationData);
-
-//     const application = dbApplicationData.get({ plain: true });
-
-//     res.render("editApp", {
-//       application,
-//       loggedIn: req.session.loggedIn,
-//       user_id: req.session.user,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
 router.post("/", withAuth, async (req, res) => {
   // create a new application
   console.log("post route");
@@ -241,22 +222,6 @@ router.get("/editApp/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-//   // New int route (part of application)
-// router.get("/editInt", async (req, res) => {
-
-//     try {
-//         const dbInterviewData = await Interview.findByPk(application.id);
-//           console.log(dbInterviewData);
-
-//         const interview = dbInterviewData.get({ plain: true });
-
-//         res.render("editApp", { interview, loggedIn: req.session.loggedIn, user_id: req.session.user });
-//       } catch (err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//       }
-//   });
 
 router.get("/userInfo", async (req, res) => {
   try {
