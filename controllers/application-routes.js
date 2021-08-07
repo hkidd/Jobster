@@ -39,9 +39,13 @@ router.get("/", withAuth, async (req, res) => {
       ],
     });
 
+    console.log(dbApplicationData);
+
     const applications = dbApplicationData.map((apps) =>
       apps.get({ plain: true })
     );
+
+    console.log(applications);
 
     res.render("homepage", {
       applications,
