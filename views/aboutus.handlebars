@@ -2,15 +2,20 @@
  <header class="features-head">
   <br>
     <h1>It's a number's game and we are on YOUR side!</h1>
+  <br>
 </header>
+
  <div class="px-4 py-5 my-5 text-center about-login">
     <h1 class="display-5 fw-bold">Let us help manage that job search</h1>
     <img class="d-block mx-auto mb-4 logo" src="./images/logo.gif.gif" alt="" width="160" height="130">
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4 track">Track all your job applications until you find your dream job!</p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        {{#if loggedIn}}
+        {{else}}
         <button type="button" class="btn btn-primary btn-lg px-4 gap-3"><a href="/login">Login!</a></button>
         <button type="button" class="btn btn-outline-secondary btn-lg px-4"><a href="/signup">Sign Up!</a></button>
+        {{/if}}
       </div>
     </div>
   </div>
@@ -55,7 +60,6 @@
       </div>
       <div class="col-md-5">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
       </div>
     </div>
     <hr class="featurette-divider">
@@ -70,8 +74,10 @@
 <footer class="footer">
     <div class="content has-text-centered">
         <p>
-        <strong>Jobster™</strong> was created by <a href="https://github.com/hkidd" target="_blank">Harrison</a>, <a href="https://github.com/mguppy" target="_blank">Maryam</a>, <a href="https://github.com/christyns92" target="_blank">Christyn</a>, <a href="https://github.com/jorropowathil" target="_blank">Joris</a> & <a href="https://github.com/cperezba" target="_blank">Carlos</a> The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        <strong>Jobster™</strong> was created by <a href="https://github.com/hkidd" target="_blank">Harrison</a>, <a href="https://github.com/mguppy" target="_blank">Maryam</a>, <a href="https://github.com/christyns92" target="_blank">Christyn</a>, <a href="https://github.com/jorropowathil" target="_blank">Joris</a> & <a href="https://github.com/cperezba" target="_blank">Carlos</a> 
+        <br>
+        The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>
         </p>
         <p class="float-end toTop"><a href="#">Back to top</a></p>
     </div>
