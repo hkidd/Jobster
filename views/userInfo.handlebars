@@ -1,36 +1,58 @@
+
+<h1>{{userInfo.first_name}} {{userInfo.last_name}}'s Profile</h1>
+
+
 {{!-- Connect Multer for uploads --}}
 
 <h1>User Profile</h1>
+
 <container class="userInfo">
-  <img src="..." class="img-thumbnail" alt="...">
-<input id="article_file_input" type="file" name="article_picture" style="display: none;">
-    <p>Click
-    <a onclick="$('input[id=article_file_input]').click();">here</a>
-     to change your picture
-    <p>
-<br>
- <div class="">
-    <label for="jobURL" class="col-form-label">Name: </label>  
-    <div class="">
-      <p>{{userInfo.image_url}}</p>
-      <p>{{userInfo.first_name}} {{userInfo.last_name}}</p>
-    </div><br><br><br>
- 
-  <container class="mb-3">
-  <label for="formFile" class="form-label"> Resumes </label>
-  <input class="form-control" type="file" id="formFile">
-</div>
-<br><br>
-<div class="mb-3">
-  <label for="formFile" class="form-label"> Cover Letters </label>
-  <input class="form-control" type="file" id="formFile">
-</div>
-<br>
-<div class="mb-3">
-  <label for="formFile" class="form-label"> Thank You Notes </label>
-  <input class="form-control" type="file" id="formFile">
-</div>
-    </div>
-    </div>
+  <img src={{userInfo.image_url}} class="img-thumbnail" id="profilePicture" alt="User Profile Picture">
+
+  <br><br><br>
+
+
+  {{!-- Profile Picture Upload --}}
+  <div class="mb-3">
+    <form action="/single" method="POST" enctype="multipart/form-data">
+      <input type="file" name='image' />
+      <button type="submit">Submit</button>
+    </form>
   </div>
-  </container>
+
+  {{!-- Resume Upload --}}
+  <div class="mb-3">
+    <form action="/resume" method="POST" enctype="multipart/form-data">
+      <input type="file" name='resume' />
+      <button type="submit">Submit</button>
+    </form>
+    <img src={{userInfo.resume_url}} class="img-thumbnail" id="profilePicture" alt="Resume Image">
+  </div>
+
+
+  {{!-- Cover Letter Upload --}}
+  <div class="mb-3">
+    <form action="/single" method="POST" enctype="multipart/form-data">
+      <input type="file" name='image' />
+      <button type="submit">Submit</button>
+    </form>
+    <img src={{userInfo.coverletter_url}} class="img-thumbnail" id="profilePicture" alt="Cover Letter Image">
+  </div>
+
+
+  {{!-- User Info Upload --}}
+  <div class="mb-3">
+    <form action="/single" method="POST" enctype="multipart/form-data">
+      <input type="file" name='image' />
+      <button type="submit">Submit</button>
+    </form>
+    <img src={{userInfo.thankyounote_url}} class="img-thumbnail" id="profilePicture" alt="Thank You Image">
+  </div>
+
+</container>
+
+
+<br><br>
+
+
+
