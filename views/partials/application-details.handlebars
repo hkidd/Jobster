@@ -6,30 +6,11 @@
   <div class="card-body">
     <h5 class="card-title">{{role}}</h5>
     <p class="card-text"><a href="{{job_url}}">{{job_url}}</a></p>
-    <p class="card-text">Status: {{application_status}}</p>
-    <div class="select is-rounded">
-  {{!-- <label for="statusSel">Status:</label> --}}
-  {{!-- <select onchange = "updateAppStatus" class=".is-arrowless" id="statusSel">
-    <option> {{application_status}}</option>
-    <option value="Application submitted, awaiting a response">Application submitted, await a response</option>
-    <option value="Prep for Phone Interview">Prep for Phone Interview</option>
-    <option value="Phone Interview Complete">Phone Interview Complete</option>
-    <option value="Prep for Onsite Interview">Prep for Onsite Interview</option>
-    <option value="Onsite Interview Complete">Onsite Interview Complete</option>
-    <option value="Prep for Proficiency Test">Prep for Proficiency Test</option>
-    <option value="Passed Proficiency Test">Passed Proficiency Test</option>
-    <option value="Failed Proficiency Test">Failed Proficiency Test</option>
-    <option value="Offer Received">Offer Received</option>
-    <option value="Accepted Offer">Accepted Offer</option>
-    <option value="Declined Offer">Declined Offer</option>
-  </select> --}}
-</div> 
-    {{!-- <button type="edit-interview" value = {{id}} class="btn btn-primary edit-interview">Edit Interview</button> --}}
-    <button type="edit" value = {{id}} class="btn btn-primary edit">Edit</button>
+    <a href="/editApp" class="btn btn-primary">Edit</a>
     <button type="delete" value = {{id}} class="btn btn-primary delete">Delete</button>
   </div>
   <div class="card-footer text-muted">
-    Submission Date: {{format_time submission_date}}
+    {{format_time submission_date}}
   </div>
 </a>
 </div>

@@ -1,64 +1,9 @@
 <container>
 <header>
-    <h1>New Job Application</h1>
-<form class="newAppForm">
-    <div class="container newAppForm">
-    <div class="company">
-    <label for="inputCompany" class="col-form-label">Company: </label>
-    <div class="">
-      <input type="company" class="form-control" id="inputCompany">
-    </div>
-  </div>
-  <br>
-  <div class="job">
-    <label for="jobURL" class="col-form-label">Job Posting URL: </label>
-    <div class="">
-      <input type="jobURL" class="form-control" id="jobURL">
-    </div>
-  </div>
-  <br>
-   <div class="dateFound">
-    <label for="dateFound" class="col-form-label">Date Job Was Found: </label>
-    <div class="">
-      <input type="date" class="form-control" id="dateFound">
-    </div>
-  </div>
-  <br>
-   <div class="role">
-    <label for="role" class="col-form-label">Role: </label>
-    <div class="">
-      <input type="role" class="form-control" id="role">
-    </div>
-  </div>
-  <br>
-    <div class="applied">
-    <label for="dateApplied" class="col-form-label">Date Applied: </label>
-    <div class="">
-      <input type="date" class="form-control" id="dateApplied">
-    </div>
-  </div>
-  <br>
-  <div class="toDos">
-    <div class="offset-sm-2">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck1">
-        <label class="form-check-label" for="gridCheck1">
-           <p>To Do's: </p>
-          Research company and role
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="toDos">
-    <div class="offset-sm-2">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck1">
-        <label class="form-check-label" for="gridCheck1">
-          Send Follow-Up Email
-        </label>
-      </div>
-    </div>
-  </div><br><br>
+    <h1>Edit Application Status</h1>
+<form class="editAppForm">
+    <div class="container editAppForm">
+<br>
   <p>Application Status</p>
   
 <div class="select is-rounded">
@@ -78,8 +23,9 @@
                     </div>
 
   <br><br>
-  <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  <button type="submit" class="btn btn-primary" value={{application.id}}>Submit</button>
+</form>
+
 </container>
 
-<script src="./js/newApp.js"></script>
+<script src=".js/editApp.js"></script>
