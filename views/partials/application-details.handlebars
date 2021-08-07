@@ -6,13 +6,40 @@
   <div class="card-body">
     <h5 class="card-title">{{role}}</h5>
     <p class="card-text"><a href="{{job_url}}">{{job_url}}</a></p>
-    {{!-- <a href="/editApp" class="btn btn-primary">Edit</a> --}}
+    <h5 class="card-title">Application Status</h5>
+    <p class="card-text">{{application_status}}</p>
+      {{!-- <br> --}}
+      {{!-- Interview Date --}}
+      <h5 class="card-title">Interview Date</h5>
+      <p class="card-text">{{format_date interviews.[0].interview_date}}</p>
+      {{#if interviews.[0].thank_you_note_sent}}
+      <p class="card-text">Thank You note has been sent!</p>
+      {{else}}
+      <p class="card-text">Thank You note has not been sent!</p>
+      {{/if}}
+
+      {{#if interviews.[0].follow_up_email}}
+      <p class="card-text">Follow up email has been sent!</p>
+      {{else}}
+      <p class="card-text">Follow up email has not been sent!</p>
+      {{/if}}
+      {{!-- <br> --}}
+      {{!-- Test Info --}}
+      <h5 class="card-title">Test Date</h5>
+      <p class="card-text">{{format_date test.test_date}}</p>
+      <p class="card-text">Concepts: {{test.concepts}}</p>
+      <p class="card-text">Passed: {{test.passed}}</p>
+      {{#if test.study_for_test}}
+      <p class="card-text">Study for this test!</p>
+      {{else}}
+      <p class="card-text"></p>
+      {{/if}}
+       {{!-- <br> --}}
     <button type="edit" value = {{id}} class="btn btn-primary edit">Edit</button>
   </div>
     <button type="delete" value = {{id}} class="btn btn-primary delete">Delete</button>
-  {{!-- </div> --}}
   <div class="card-footer text-muted">
-    {{format_time submission_date}}
+    {{format_date submission_date}}
   </div>
 </a>
 </div>

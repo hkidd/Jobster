@@ -2,8 +2,13 @@
 {{> application-details}}
 {{/each}}
 
-{{!-- <script src="./js/editBtn.js"></script>
-<script src="./js/deleteApp.js"></script> --}}
+{{#each applications.interview as |interview|}}
+{{> application-details}}
+{{/each}}
+
+{{#each applications.test as |test|}}
+{{> application-details}}
+{{/each}}
 
 <script src="./js/editBtn.js"></script>
 <script src="./js/deleteApp.js"></script>
