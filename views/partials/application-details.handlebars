@@ -6,6 +6,7 @@
   <div class="card-body">
     <h5 class="card-title">{{role}}</h5>
     <p class="card-text"><a href="{{job_url}}">{{job_url}}</a></p>
+
     <p class="card-text">Status: {{application_status}}</p>
     <div class="select is-rounded">
   {{!-- <label for="statusSel">Status:</label> --}}
@@ -26,6 +27,7 @@
 </div> 
     {{!-- <button type="edit-interview" value = {{id}} class="btn btn-primary edit-interview">Edit Interview</button> --}}
     <button type="edit" value = {{id}} class="btn btn-primary edit">Edit</button>
+
     <button type="delete" value = {{id}} class="btn btn-primary delete">Delete</button>
   </div>
   <div class="card-footer text-muted">
