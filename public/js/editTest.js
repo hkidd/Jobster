@@ -13,7 +13,7 @@ const handleTestEdit = async (event) => {
   console.log(passed);
 
   if (test_date || concepts || passed) {
-    const responseApp = await fetch(
+    const responseTest = await fetch(
       `/api/interview-routes/editIntInfo/${testId}`,
       {
         method: "PUT",
@@ -26,7 +26,7 @@ const handleTestEdit = async (event) => {
       }
     );
 
-    if (responseApp.ok) {
+    if (responseTest.ok) {
       document.location.replace("/");
     } else {
       alert("Failed to edit test.");
