@@ -32,11 +32,11 @@
       {{else}}
       <p class="card-text"></p>
       {{/if}}
-    <button type="edit" value = {{id}} class="btn btn-primary editApp">Edit App</button>
-    <button type="edit" value = {{id}} class="btn btn-primary editInt">Edit Int</button>
-    <button type="edit" value = {{id}} class="btn btn-primary editTest">Edit Test</button>
+    <button type="edit" value = {{id}} class="btn btn-primary editApp"><i class="fas fa-edit"></i> App</button>
+    <button type="edit" value = {{id}} class="btn btn-primary editInt"><i class="fas fa-edit"></i> Int</button>
+    <button type="edit" value = {{id}} class="btn btn-primary editTest"><i class="fas fa-edit"></i> Test</button>
   </div>
-    <button type="delete" value = {{id}} class="btn btn-primary delete">Delete</button>
+    <button type="delete" value = {{id}} class="btn btn-primary delete"><i class="fas fa-trash-alt"></i></button>
   <div class="card-footer text-muted">
     {{format_date submission_date}}
   </div>
