@@ -101,7 +101,7 @@ router.delete("/interview/", withAuth, async (req, res) => {
   }
 });
 
-// Edit app route
+// Edit int route
 router.get("/editInt/:id", async (req, res) => {
   try {
     const dbInterviewData = await Interview.findOne({

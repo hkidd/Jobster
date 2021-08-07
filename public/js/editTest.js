@@ -14,11 +14,11 @@ const handleTestEdit = async (event) => {
 
   if (test_date || concepts || passed) {
     const responseTest = await fetch(
-      `/api/interview-routes/editIntInfo/${testId}`,
+      `/api/test-routes/editTestInfo/${testId}`,
       {
         method: "PUT",
         body: JSON.stringify({
-          passed: passed,
+          test_date: test_date,
           concepts: concepts,
           passed: passed,
         }),
