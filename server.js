@@ -94,7 +94,9 @@ app.post('/single', upload.single('image'), (req, res) => {
 
   cloudinary.uploader.upload(imageLocation, { tags: "Profile Picture" }).then(data => {
     console.log(data.secure_url);
+
     if (data.secure_url) {
+
       User.update({
         image_url: data.secure_url
       },
