@@ -17,6 +17,6 @@ const appEditBtn = async (event) => {
   }
 };
 
-document.querySelectorAll(".edit").forEach((btn) => {
+document.querySelectorAll(".editApp").forEach((btn) => {
   btn.addEventListener("click", appEditBtn);
 });

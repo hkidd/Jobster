@@ -1,75 +1,33 @@
 # Jobster
-![Badge](https://img.shields.io/badge/licence-MIT-brightgreen)
-## Table of Contents:
+Group 2 - Jobster: the Job application tracker<br><br>
+Link to live deployed app: https://jobster-group-2.herokuapp.com/aboutus
 
-### [Description](#description-header)
+## Purpose
+It can really be a pain to track all of your job applications, and we aim to alleviate this problem.  <br><br>
+We have created a web app where, once signed up and logged in, users can track all of their applications in one place by submitting the appropriate information in our forms.  Just imagine not having to stress yourself over rememberign details of each application!
+<br><br>
+Not only can users track all of their applications, but we also give the ability to upload resumes and cover letters.  Essentially a one stop shop to keep all job app related materials! 
+<br>
 
-### [Installation](#installation-header)
+## Technologies Used
+This project was created and deployed using JavaScript, node.js (and associated packages), HTML, CSS, Handlebars, mySQL, and Heroku. 
 
-### [Usage](#usage-header)
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+<br>
 
-### [Licence](#licence-header)
-
-### [Collaborators](#collaborators-header)
-
-### [Credits](#credits-header)
-
-### [Questions](#questions-header)
-
----
-
-<br/>
-
-## <a id="description-header"></a> Description
-
-This project was done as a means of putting the practice all of the various skills we have learned in our UTA Bootcamp. Middleware, such as Node.js, databases such as SQL and Sequilize, as well as Model View Controller(MVC) were used to create a fully functional website.
-
-Jobster is job application aggregator. It is used to tracks one's numerous job applications, keeping track of interviews, dates, resumes, and cover letters in a centralized location.
-
-
-<br/>
-
-## <a id="installation-header"></a> Installation
-
-No installation neccesary! Click here to access Jobster.
-
-
-<br/>
-
-## <a id="usage-header"></a> Usage
-
-Create a profile. Create job applications. Upload resume and cover letters.
-
-<br/>
-
-## <a id="collaborators-header"></a> Collaborators
-
-Collaborators for this project: Harrison Kidd, Chrystin Garcia, Maryam Guppy, Joris Powathil, and Carlos Perez.
-
-
-<br/>
-
-## <a id="credits-header"></a> Credits
-
-Credit goes to the UTA Bootcamp for providing instruction and tools for learning Full-Stack Web Development.
-
-
-<br/>
-
-## <a id="licence-header"></a> Licence
-
-Jobster is released under the MIT licence.
-
-
-
-<br/>
-
-## <a id="questions-header"></a> Questions
-
-For more information and suggestions you can contact me at harrisonakidd@gmail.com.
-
-For a list of other projects and repos visit https://github.com/hkidd
-
-
-
----
+## Contact the contributors
+Christyn Garcia <br>
+https://github.com/christyns92
+<br><br>
+Carlos Perez <br>
+https://github.com/cperezba
+<br><br>
+Harrison Kidd <br>
+https://github.com/hkidd
+<br><br>
+Joris Powathil <br>
+https://github.com/mguppy 
+<br><br>
+Maryam Guppy <br>
+https://github.com/mguppy 

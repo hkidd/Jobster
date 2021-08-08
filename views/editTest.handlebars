@@ -1,8 +1,8 @@
- <container>
+ <container class="editTestForm">
 <header>
     <h1>Edit Test Information</h1>
-    <form class="newTestForm"></form>
-    <div class="container newTestForm">
+    <form class="editTestForm">
+    <div class="container editTestForm">
  <div class="test">
     <label for="testDate" class="col-form-label">Date Of Efficiency Test: </label>
     <div class="">
@@ -13,14 +13,14 @@
   <div class="concepts">
     <label for="conceptsTested" class="col-form-label">Concepts Tested: </label>
     <div class="">
-      <input type="input" class="form-control" id="conceptsTested">
+      <input type="input" class="form-control" id="conceptsTested" value={{test.concepts}}>
     </div>
   </div>
   <br>
   <div class="passed">
     <label for="passed" class="col-form-label">Passed: </label>
     <div class="">
-      <input type="input" class="form-control" id="passed">
+      <input type="input" class="form-control" id="passed" value={{test.passed}}>
     </div>
   </div>
   <br>
@@ -47,8 +47,8 @@
   </div>
   <br>
 <br><br>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary editSubmit" id="submitTest" value={{test.id}}>Submit</button>
   </form>
   </container>
 
-    <script src="./js/newTest.js"></script>
+<script src="/js/editTest.js"></script>

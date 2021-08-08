@@ -1,3 +1,19 @@
 {{#each applications as |app|}}
 {{> application-details}}
 {{/each}}
+
+{{#each applications.interview as |interview|}}
+{{> application-details}}
+{{/each}}
+
+{{#each applications.test as |test|}}
+{{> application-details}}
+{{/each}}
+
+<script src="./js/editAppBtn.js"></script>
+<script src="./js/editIntBtn.js"></script>
+<script src="./js/editTestBtn.js"></script>
+<script src="./js/deleteApp.js"></script>
+<script src="./js/editApp.js"></script>
+<script src="./js/editInt.js"></script>
+<script src="./js/editTest.js"></script>
