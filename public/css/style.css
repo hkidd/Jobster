@@ -30,12 +30,20 @@ body {
     background-color: var(--quatrinary);
 }
 
-h1  {
-font-family: 'Josefin Sans', sans-serif;
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 h2 {
     font-family: 'Josefin Sans', sans-serif;
+}
+
+h6 {
+    padding-top: 14px;
+    font-size: 35px;
+    font-family: 'JUSTICE LEAGUE';
+    font-style: normal;
+    letter-spacing: 2px;
 }
 
 font a {
@@ -73,13 +81,14 @@ aside {
 nav {
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
+    justify-content: center;
 }
 
 nav a {
+    justify-content: center;
     color: var(--light);
     padding: 14px 20px;
     text-decoration: none;
-    text-align: center;
 }
 
 nav a:hover {
@@ -116,16 +125,18 @@ img {
     box-shadow: 0px 0px 5px #fff;
 }
 
-.profile-pic{
+.profile-pic {
     max-width: 100%;
     box-shadow: 0px 0px 10px #fff;
     border-radius: 50px;
 }
 
-#profilePicture{
+#profilePicture {
     height: 250px;
     /* width: 250px; */
 }
+
+
 /* 
 .main{
     background-color: rgb(0, 89, 255);
@@ -140,9 +151,9 @@ img {
     box-shadow: 5px 5px 2px 2px rgba(0, 0, 255, .2);
 }
 
-.newAppForm{
+.newAppForm {
     border-radius: 10px;
-    background-color:#ffe7af;
+    background-color: #ffe7af;
 }
 
 form {
@@ -174,29 +185,29 @@ form {
     box-shadow: 5px 5px 2px 2px rgba(0, 0, 255, .2);
 }
 
-.about-login{
-text-align: center;
-align-items: center;
-margin: auto;
-flex: 0 1 300px;
-border: 7px;
-border-radius: 10px;
-background: rgb(96, 103, 247);
-background: linear-gradient(270deg, rgba(96, 103, 247, 1) 17%, rgba(0, 53, 102, 1) 85%);
-color: var(--dark);
-padding-top: 10px;
-max-width: 80%;
-max-height: 80%;
-margin-top: 10px;
-margin-bottom: 10px;
-box-shadow: 5px 5px 2px 2px rgba(0, 0, 255, .2);
+.about-login {
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    flex: 0 1 300px;
+    border: 7px;
+    border-radius: 10px;
+    background: rgb(96, 103, 247);
+    background: linear-gradient(270deg, rgba(96, 103, 247, 1) 17%, rgba(0, 53, 102, 1) 85%);
+    color: var(--dark);
+    padding-top: 10px;
+    max-width: 80%;
+    max-height: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 2px 2px rgba(0, 0, 255, .2);
 }
 
-.track{
+.track {
     color: white;
 }
 
-.logo{
+.logo {
     border-radius: 30px;
 }
 
@@ -216,9 +227,11 @@ box-shadow: 5px 5px 2px 2px rgba(0, 0, 255, .2);
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.features-head{
+
+.features-head {
     border-radius: 5px;
 }
+
 .features-card {
     align-items: center;
     text-align: center;
@@ -251,7 +264,7 @@ box-shadow: 5px 5px 2px 2px rgba(0, 0, 255, .2);
     box-shadow: 5px 5px 2px 2px rgba(0, 0, 255, .2);
 }
 
-.user-profile-card{
+.user-profile-card {
     border-radius: 10px;
     background: linear-gradient(270deg, rgba(96, 103, 247, 1) 17%, rgba(0, 53, 102, 1) 85%);
     box-shadow: 5px 5px 2px 2px rgba(0, 0, 255, .2);
@@ -311,7 +324,9 @@ h1 {
     align-items: center;
 }
 
+
 /* Centers text/inputs for the edit cards */
+
 .newAppForm,
 .newIntForm,
 .newTestForm,
