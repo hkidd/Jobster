@@ -10,7 +10,7 @@ Not only can users track all of their applications, but we also give the ability
 <br>
 
 ## Technologies Used
-This project was created and deployed using JavaScript, node.js (and associated packages), HTML, CSS, Handlebars, mySQL, Multer, Cloudinary, and Heroku. 
+This project was created and deployed using JavaScript, node.js (and associated packages), HTML, CSS, Handlebars, mySQL, Multer, Cloudinary, Figma, Dbdiagram.io, and Heroku. 
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
