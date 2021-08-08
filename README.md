@@ -1,6 +1,6 @@
 # Jobster
-Group 2 - Jobster: the Job application tracker
-Link to live deployed app:
+Group 2 - Jobster: the Job application tracker<br><br>
+Link to live deployed app: https://jobster-group2.herokuapp.com
 
 ## Purpose
 It can really be a pain to track all of your job applications, and we aim to alleviate this problem.  <br><br>
@@ -17,18 +17,17 @@ This project was created and deployed using JavaScript, node.js (and associated 
 <br>
 
 ## Contact the contributors
-Harrison Kidd <br>
-https://github.com/hkidd
-<br>
 Christyn Garcia <br>
 https://github.com/christyns92
-<br>
-Maryam Guppy <br>
-https://github.com/mguppy 
-<br>
-Joris Powathil <br>
-https://github.com/mguppy 
-<br>
+<br><br>
 Carlos Perez <br>
 https://github.com/cperezba
-<br>
+<br><br>
+Harrison Kidd <br>
+https://github.com/hkidd
+<br><br>
+Joris Powathil <br>
+https://github.com/mguppy 
+<br><br>
+Maryam Guppy <br>
+https://github.com/mguppy 
