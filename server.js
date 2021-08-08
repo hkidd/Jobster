@@ -104,7 +104,7 @@ app.post('/single', upload.single('image'), (req, res) => {
           }
         })
         .then((newUserProfilePic) => {
-          res.json(newUserProfilePic);
+          res.redirect("/userInfo").json(newUserProfilePic)
         })
         .catch((err) => {
           res.json(err);
@@ -112,7 +112,6 @@ app.post('/single', upload.single('image'), (req, res) => {
     }
     fs.unlink(imageLocation, (error) => error ? console.log(error) : null)
   });
-
 
   // res.send(`${savedImage} Single File Upload Success`);
 });
@@ -153,7 +152,7 @@ app.post('/resume', upload.single('resume'), (req, res) => {
           }
         })
         .then((newUserProfilePic) => {
-          res.json(newUserProfilePic);
+          res.redirect("/userInfo").json(newUserProfilePic);
         })
         .catch((err) => {
           res.json(err);
@@ -197,7 +196,7 @@ app.post('/coverLetter', upload.single('coverLetter'), (req, res) => {
           }
         })
         .then((newCoverLetter) => {
-          res.json(newCoverLetter);
+          res.redirect("/userInfo").json(newCoverLetter);
         })
         .catch((err) => {
           res.json(err);

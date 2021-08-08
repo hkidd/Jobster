@@ -312,6 +312,9 @@ h1 {
 }
 
 /* Centers text/inputs for the edit cards */
+.newAppForm,
+.newIntForm,
+.newTestForm,
 .editAppForm,
 .editIntForm,
 .editTestForm {
@@ -323,7 +326,16 @@ h1 {
 }
 
 .btn.btn-primary.editSubmit {
+    border: 2px solid #ffd166;
     background-color: #ffd166;
     color: #003566;
     font-weight: bold;
+}
+
+.btn.btn-primary.editSubmit:hover {
+    border: 2px solid #ffd166;
+    color: #ffd166;
+    background-color: #003566;
+    font-weight: bold;
+    transition: color 0.1s;
 }
