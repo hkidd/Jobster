@@ -10,6 +10,7 @@ const signupFormHandler = async (event) => {
   const last_name = document.querySelector("#lastname-signup").value.trim();
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
+  const image_url = "/public/images/StaticLogo.png"
 
   console.log(first_name);
   console.log(last_name);
@@ -19,7 +20,7 @@ const signupFormHandler = async (event) => {
   if (first_name && last_name && email && password) {
     const response = await fetch("/api/users/signup", {
       method: "POST",
-      body: JSON.stringify({ first_name:first_name, last_name:last_name, email:email, password:password }),
+      body: JSON.stringify({ first_name:first_name, last_name:last_name, email:email, password:password, image_url }),
       headers: { "Content-Type": "application/json" },
     });
 

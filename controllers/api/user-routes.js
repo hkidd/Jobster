@@ -4,16 +4,22 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+const stockPhoto = "http://res.cloudinary.com/dn6fups1l/image/upload/v1628390122/hvgh5lijfplkbn9qzbd9.png"
+
 // CREATE new user (Sign Up)
 router.post("/signup", async (req, res) => {
   console.log(req.body);
+
   try {
     const dbUserData = await User.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       email: req.body.email,
       password: req.body.password,
+      image_url: stockPhoto
     });
+
+    console.log(dbUserData);
 
     const userId = dbUserData.dataValues.id;
 
