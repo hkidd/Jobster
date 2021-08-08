@@ -1,8 +1,9 @@
- <container>
+ <container class="editIntForm">
  <header>
-    <h1>New Interview Information </h1>
-    <div class="container newIntForm">
- <div class="interviewDate">
+    <h1>Edit Interview Information </h1>
+    <form class="editIntForm">
+    <div class="container editIntForm">
+  <div class="interviewDate">
     <label for="interviewDate" class="col-form-label">Date Of Interview: </label>
     <div class="">
       <input type="date" class="form-control" id="interviewDate">
@@ -31,7 +32,8 @@
     </div>
   </div>
   <br><br>
-   <button type="submit" class="btn btn-primary">Submit</button>
-    </container>
-    
-    <script src="./js/newInt.js"></script>
+   <button type="submit" class="btn btn-primary editSubmit" id="submitInt" value={{interview.id}}>Submit</button>
+    </form>
+</container>
+
+<script src="/js/editInt.js"></script>

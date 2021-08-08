@@ -5,18 +5,27 @@ const withAuth = require('../../utils/auth');
 
 // Need routes for the job tests.
 
-// GET, Not sure if this is necessary
-router.get('/test', withAuth, async (req, res) => {
+// Edit test route
+router.get("/editTest/:id", async (req, res) => {
     try {
-        const dbTestData = await Test.findAll({
-            include: [],
-        });
-
-          res.status(200).json(dbTestData);
-        } catch (err) {
-          res.status(400).json(err);
-        }
-});
+      const dbTestData = await Test.findOne({
+          where: { application_id: req.params.id }
+      });
+      console.log(dbTestData);
+  
+      const test = dbTestData.get({ plain: true });
+      console.log(test.test);
+  
+      res.render("editTest", {
+        test,
+        loggedIn: req.session.loggedIn,
+        user_id: req.session.user,
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
 
 
 // POST, Need to be able to add new tests to the database
@@ -37,23 +46,32 @@ router.post('/test', withAuth, async (req, res) => {
     }
 });
 
-
-// PUT, Need to be able to update test info by id
-router.put('/test/:id', withAuth, async (req, res) => {
-    console.log("post route")
+// PUT, Update an test by application id
+router.put("/editTestInfo/:id", withAuth, async (req, res) => {
+    console.log(req.params.id);
+  
     try {
-        const testData = await Test.create({
+      const testData = await Test.update(
+        {
             test_date: req.body.test_date,
             concepts: req.body.concepts,
             passed: req.body.passed,
-        });
-        // if the test is successfully updated, the new response will be returned as json
-        res.status(200).json(testData);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
+        },
+        {
+          where: {
+            id: req.params.id,
+          },
+        }
+      );
 
+      req.session.save(() => {
+        // if the application is successfully updated, the response will be returned as json
+        res.status(200).json(testData);
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 // DELETE, Need to be able to delete tests by id
 router.delete('/test/:id', withAuth, async (req, res) => {
