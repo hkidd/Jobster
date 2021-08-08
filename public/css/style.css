@@ -354,3 +354,7 @@ h1 {
     font-weight: bold;
     transition: color 0.1s;
 }
+
+.card-title {
+    text-decoration: underline;
+}

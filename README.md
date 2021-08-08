@@ -17,17 +17,17 @@ This project was created and deployed using JavaScript, node.js (and associated 
 <br>
 
 ## Contact the contributors
-Christyn Garcia <br>
-https://github.com/christyns92
-<br><br>
 Carlos Perez <br>
 https://github.com/cperezba
+<br><br>
+Christyn Garcia <br>
+https://github.com/christyns92
 <br><br>
 Harrison Kidd <br>
 https://github.com/hkidd
 <br><br>
 Joris Powathil <br>
-https://github.com/mguppy 
+https://github.com/jorropowathil
 <br><br>
 Maryam Guppy <br>
 https://github.com/mguppy 
