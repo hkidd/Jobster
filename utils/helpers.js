@@ -3,11 +3,6 @@ module.exports = {
       return date.toLocaleDateString('en-US', { timeZone: 'America/Chicago' });
     },
 
-    // format_date: (date) => {
-    //   return `${new Date(date).getMonth() + 1}/${new Date(date).getDate() + 1}/${
-    //     new Date(date).getFullYear()}`;
-    // }
-
     format_date: (date) => {
       var d = date
       var year = d.getFullYear();
