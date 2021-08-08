@@ -4,7 +4,7 @@ Link to live deployed app: https://jobster-group-2.herokuapp.com/aboutus
 
 ## Purpose
 It can really be a pain to track all of your job applications, and we aim to alleviate this problem.  <br><br>
-We have created a web app where, once signed up and logged in, users can track all of their applications in one place by submitting the appropriate information in our forms.  Just imagine not having to stress yourself over rememberign details of each application!
+We have created a web app where, once signed up and logged in, users can track all of their applications in one place by submitting the appropriate information in our forms.  Just imagine not having to stress yourself over remembering details of each application!
 <br><br>
 Not only can users track all of their applications, but we also give the ability to upload resumes and cover letters.  Essentially a one stop shop to keep all job app related materials! 
 <br>
