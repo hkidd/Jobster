@@ -312,6 +312,9 @@ h1 {
 }
 
 /* Centers text/inputs for the edit cards */
+.newAppForm,
+.newIntForm,
+.newTestForm,
 .editAppForm,
 .editIntForm,
 .editTestForm {
