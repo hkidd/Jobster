@@ -93,10 +93,10 @@ app.post('/single', upload.single('image'), (req, res) => {
   console.log(imageLocation);
 
   cloudinary.uploader.upload(imageLocation, { tags: "Profile Picture" }).then(data => {
-    console.log(data.url);
-    if (data.url) {
+    console.log(data.secure_url);
+    if (data.secure_url) {
       User.update({
-        image_url: data.url
+        image_url: data.secure_url
       },
         {
           where: {
@@ -130,11 +130,11 @@ app.post('/resume', upload.single('resume'), (req, res) => {
 
   cloudinary.uploader.upload(resumeLocation, { tags: "Resume" }).then(data => {
     console.log(data);
-    console.log(data.url);
+    console.log(data.secure_url);
 
     // Transform .pdf to renderable jpeg
     console.log("-----------------PDF TRANSORMATION-------------------");
-    let originalURL = data.url;
+    let originalURL = data.secure_url;
     console.log(originalURL);
     let splitURL = originalURL.split('.pdf');
     console.log(splitURL);
@@ -174,11 +174,11 @@ app.post('/coverLetter', upload.single('coverLetter'), (req, res) => {
   console.log(coverLetterLocation);
 
   cloudinary.uploader.upload(coverLetterLocation, { tags: "Cover-Letter" }).then(data => {
-    console.log(data.url);
+    console.log(data.secure_url);
 
     // Transform .pdf to renderable jpeg
     console.log("-----------------PDF TRANSORMATION-------------------");
-    let originalURL = data.url;
+    let originalURL = data.secure_url;
     console.log(originalURL);
     let splitURL = originalURL.split('.pdf');
     console.log(splitURL);
