@@ -18,7 +18,7 @@ Instead of using the front end you developed for your first project, you should 
 This project was created and deployed using JavaScript, node.js (and associated packages), HTML, CSS, Handlebars, mySQL, Multer, Cloudinary, Figma, Dbdiagram.io, and Heroku. 
 
 ## Demo!
-Home Page: [Jobster](https://user-images.githubusercontent.com/81654878/128737920-fc942f02-c014-412a-8509-558ae869f153.png)
+Home Page: ![Jobster](https://user-images.githubusercontent.com/81654878/128737920-fc942f02-c014-412a-8509-558ae869f153.png)
 Summary Page: ![Screenshot (422)](https://user-images.githubusercontent.com/81654878/128738082-a9f9dcd6-3d51-4250-aeef-81a3e7840289.png)
 New Application Page: ![Screenshot (423)](https://user-images.githubusercontent.com/81654878/128738239-0bad1d3b-df23-46b6-9850-196defbe09b7.png)
 
