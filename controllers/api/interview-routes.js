@@ -18,21 +18,6 @@ router.get("/interview/", withAuth, async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
-
-  //     const interviews = dbInterviewData.map((apps) =>
-  //         apps.get({ plain: true })
-  //     );
-
-  //     console.log(interviews);
-
-  //     res.render('homepage', {
-  //         interviews,
-  //         loggedIn: req.session.loggedIn,
-  //     });
-  // } catch (err) {
-  //     console.log(err);
-  //     res.status(500).json(err);
-  // }
 });
 
 // POST

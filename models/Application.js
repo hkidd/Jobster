@@ -31,7 +31,6 @@ Application.init(
         date_found: {
             type: DataTypes.DATE,
         },
-        // Status options - Application submitted, Prep for phone interview, Phone interview complete, Prep for onsite interview, Onsite interview complete, Prep for proficiency test, Passed proficiency test, Failed proficiency test, Offer received, Accepted offer, Declined offer 
         application_status: {
             type: DataTypes.STRING,
         },

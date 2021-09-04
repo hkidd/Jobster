@@ -1,5 +1,6 @@
 //Imports
 const path = require('path');
+const compression = require('compression');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
@@ -39,6 +40,7 @@ const sess = {
   }),
 };
 
+app.use(compression());
 app.use(session(sess));
 const hbs = exphbs.create({ helpers });
 
