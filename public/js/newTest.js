@@ -8,12 +8,6 @@ const passed = document.querySelector("#passed").value.trim();
 const study_for_test = document.querySelector("#studyTest").checked;
 const follow_up_email = document.querySelector("#sendFollowUp").checked;
 
-console.log(test_date);
-console.log(concepts);
-console.log(passed);
-console.log(study_for_test);
-console.log(follow_up_email);
-
 if (test_date || concepts || passed || study_for_test || follow_up_email) {
   const responseTest = await fetch("/api/test-routes/test", {
     method: "POST",

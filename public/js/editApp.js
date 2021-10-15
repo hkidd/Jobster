@@ -6,8 +6,6 @@ const handleAppEdit = async (event) => {
 
   const application_status = document.querySelector("#statusSel").value;
 
-  console.log(application_status);
-
   if (application_status) {
     const responseApp = await fetch(`/changeAppStatus/${applicationId}`, {
       method: "PUT",

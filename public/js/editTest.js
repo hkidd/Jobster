@@ -8,10 +8,6 @@ const handleTestEdit = async (event) => {
   const concepts = document.querySelector("#conceptsTested").value.trim();
   const passed = document.querySelector("#passed").value.trim();
 
-  console.log(test_date);
-  console.log(concepts);
-  console.log(passed);
-
   if (test_date || concepts || passed) {
     const responseTest = await fetch(
       `/api/test-routes/editTestInfo/${testId}`,

@@ -12,11 +12,6 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector("#password-signup").value.trim();
   const image_url = "/public/images/StaticLogo.png"
 
-  console.log(first_name);
-  console.log(last_name);
-  console.log(email);
-  console.log(password);
-
   if (first_name && last_name && email && password) {
     const response = await fetch("/api/users/signup", {
       method: "POST",

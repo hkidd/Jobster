@@ -3,7 +3,6 @@ const handleAppDelete = async (event) => {
         event.preventDefault();
 
     const applicationId = event.target.value;
-    console.log(applicationId);
 
     if (applicationId) {
         const responseApp = await fetch(`/${applicationId}`, {
